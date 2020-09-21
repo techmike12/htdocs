@@ -21,7 +21,15 @@
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/navigation.php'; ?>
     </nav>
     <main>
-        <h1>Content Title here</h1>
+        <h1>Welcome to PHP Motors</h1>
+        <section>
+            <h2>DMC Delorean</h2>
+            <ul id="dmc">
+                <li>3 Cup holders</li>
+                <li>Superman doors</li>
+                <li>Fuzzt dice!</li>
+            </ul>
+        </section>
     </main>
     <hr id="break">
     <footer>
