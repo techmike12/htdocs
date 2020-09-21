@@ -14,26 +14,21 @@
 }
 
 header {
-    display: flex;
-    flex-wrap: nowrap;
+
     height: 100px;
 }
 
 #logo{
+    float: left;
     border-radius: 12px;
     padding: 0 1em 1em 1em;
     height: 60px;
     margin: 10px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: left;
     height: 80px;
 }
 
 #account{
-    display: flex;
-    flex-wrap: nowrap;
+    float: right;
     font-family: Righteous;
     font-size: 1em;
     margin-top: 2%;
@@ -55,17 +50,13 @@ nav {
 
 .navigation {
 	list-style-type: none;
-	margin: 0;
-    padding: 0;
     overflow: hidden;
 }
 
 
 .navigation li {
-    display: flex;
-    align-items: center;
-    float: left;
     height: 50px;
+    float: left;
 }
 
 .navigation a {
