@@ -34,12 +34,10 @@ header {
 #account{
     display: flex;
     flex-wrap: nowrap;
-    align-items: right;
     font-family: Righteous;
     font-size: 1em;
     margin-top: 2%;
-    margin-left: auto;
-    margin-right: 10%;
+    margin-right: 2%;
     text-decoration: none;
 }
 
