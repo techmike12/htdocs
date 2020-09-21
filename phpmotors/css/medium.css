@@ -6,4 +6,18 @@
     .navigation a {
         padding: 15px;
     }
+
+    #content {
+        width: 80%;
+        position: absolute;
+        right: 10%;
+        left: auto;
+        top: 2%;
+        border: 5px solid #4c96d7;
+        border-radius: 1%;
+    }
+
+    #background {
+        background-image: url(/phpmotors/images/site/checkerboard.jpg);
+    }
 }
