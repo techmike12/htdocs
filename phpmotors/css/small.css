@@ -1,0 +1,123 @@
+#background {
+    background-image: url(/phpmotors/images/site/checkerboard.jpg);
+}
+
+#content {
+    background-color: #ffff;
+    width: 80%;
+    position: absolute;
+    right: 10%;
+    left: auto;
+    top: 2%;
+    border: 5px solid #4c96d7;
+    border-radius: 1%;
+}
+
+header {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100px;
+}
+
+#logo{
+    border-radius: 12px;
+    padding: 0 1em 1em 1em;
+    height: 60px;
+    margin: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: left;
+    height: 80px;
+}
+
+#account{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: right;
+    font-family: Righteous;
+    font-size: 1em;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: 10%;
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+    font-size: 1em;
+    color: #002D52;
+    text-align: center;
+}
+
+nav {
+    background-color: #3a3a3a;
+    text-align: center;
+}
+
+.navigation {
+	list-style-type: none;
+	margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+.navigation li {
+    display: flex;
+    align-items: center;
+    float: left;
+    height: 50px;
+}
+
+.navigation a {
+    display: block;
+    padding: 5px;
+	text-decoration: none;
+	color: white;
+    font-weight: 700;
+}
+
+nav ul li.active {
+    background-color: #4c96d7;
+}
+
+nav ul li.active a{
+    color: black;
+}
+
+nav ul li a:hover {
+    color: #3a3a3a;
+}
+
+h1{
+    font-size: 2em;
+    color: black;
+    font-family: Righteous;
+    padding-left: 10px;
+}
+
+h2 {
+    color: #3a3a3a;
+    text-align: center;
+    font-family: Righteous;
+}
+
+#break {
+    background-color: #3a3a3a;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    height: 5px
+}
+
+footer {
+    height: 125px;
+    width: 100%;
+    color: #3a3a3a;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
