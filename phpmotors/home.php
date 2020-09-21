@@ -29,6 +29,7 @@
                 <li>Superman doors</li>
                 <li>Fuzzt dice!</li>
             </ul>
+            <img id="delor" src="/phpmotors/images/delorean.jpg" alt="DMC Delorean">
         </section>
     </main>
     <hr id="break">
