@@ -8,13 +8,32 @@
     }
 
     #content {
-        width: 80%;
+        width: 70%;
         position: absolute;
-        right: 10%;
+        right: 15%;
         left: auto;
         top: 2%;
         border: 5px solid #4c96d7;
         border-radius: 1%;
+    }
+
+    #upgrades {
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-column: 1;
+        margin: auto;
+        max-width: 500px;
+    }
+
+    #reviews {
+        grid-row-start: 2;
+        grid-column-start: 2;
+        grid-column: 2;
+    }
+
+    #uprev {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
     #background {

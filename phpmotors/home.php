@@ -22,15 +22,56 @@
     </nav>
     <main>
         <h1>Welcome to PHP Motors</h1>
-        <section>
+        <section id="dmccar">
+            <div id="dmcinfo">
             <h2>DMC Delorean</h2>
-            <ul id="dmc">
-                <li>3 Cup holders</li>
-                <li>Superman doors</li>
-                <li>Fuzzt dice!</li>
-            </ul>
+            <p>3 Cup holders</p>
+            <p>Superman doors</p>
+            <p>Fuzzt dice!</p>
+            <input type="image" src="/phpmotors/images/site/own_today.png">
+            </div>
+            <div id="dmc">
             <img id="delor" src="/phpmotors/images/delorean.jpg" alt="DMC Delorean">
+            </div>
         </section>
+            <section id="uprev">
+                <section id="reviews">
+                    <h2>DMC Delorean Reviews</h2>
+                        <ul>
+                            <li>"So fast its almost like traveling in time." (4/5)</li>
+                            <li>"Coolest ride on the road." (4/5)</li>
+                            <li>"I'm feeling Marty Mcfly!" (5/5)</li>
+                            <li>"The most futuristic ride of our day" (4.5/5)</li>
+                            <li>"80's livin and I love it!" (5/5)</li>
+                        </ul>
+                </section>
+                <div id="upgrades">
+                    <section id="flux">
+                        <img src="/phpmotors/images/upgrades/flux-cap.png" alt="Flux Capacitor">
+                        <div class="uplink">
+                            <a href="#">Flux Capacitor</a>
+                        </div>
+                    </section>
+                    <section id="flame">
+                        <img src="/phpmotors/images/upgrades/flame.jpg" alt="Flame Decals">
+                        <div class="uplink">
+                            <a href="#">Flame Decals</a>
+                        </div>
+                    </section>
+                    <section id="sticker">
+                        <img src="/phpmotors/images/upgrades/bumper_sticker.jpg" alt="Bumper Stickers">
+                        <div class="uplink">
+                            <a href="#">Bumper Stickers</a>
+                        </div>
+                    </section>
+                    <section id="hub">
+                        <img src="/phpmotors/images/upgrades/hub-cap.jpg" alt="Hub Caps">
+                        <div class="uplink">
+                            <a href="#">Hub Caps</a>
+                        </div>
+                    </section>
+                </div>
+            </section>
     </main>
     <hr id="break">
     <footer>
