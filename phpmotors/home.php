@@ -24,14 +24,14 @@
         <h1>Welcome to PHP Motors</h1>
         <section id="dmccar">
             <div id="dmcinfo">
-            <h2>DMC Delorean</h2>
-            <p>3 Cup holders</p>
-            <p>Superman doors</p>
-            <p>Fuzzt dice!</p>
-            <input type="image" src="/phpmotors/images/site/own_today.png">
+                <h2>DMC Delorean</h2>
+                <p>3 Cup holders</p>
+                <p>Superman doors</p>
+                <p>Fuzzy dice!</p>
+                <input type="image" src="/phpmotors/images/site/own_today.png">
             </div>
             <div id="dmc">
-            <img id="delor" src="/phpmotors/images/delorean.jpg" alt="DMC Delorean">
+                <img id="delor" src="/phpmotors/images/delorean.jpg" alt="DMC Delorean">
             </div>
         </section>
             <section id="uprev">
@@ -45,6 +45,7 @@
                             <li>"80's livin and I love it!" (5/5)</li>
                         </ul>
                 </section>
+                <h2 id="upgradehead">Delorean Upgrades</h2>
                 <div id="upgrades">
                     <section id="flux">
                         <img src="/phpmotors/images/upgrades/flux-cap.png" alt="Flux Capacitor">
