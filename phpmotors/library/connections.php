@@ -13,10 +13,10 @@
         // Create the actual connection object and assign it to a variable
         try {
             $link = new PDO($dsn, $username, $password, $options);
-             if (is_object($link)) {
-                echo 'It Worked!';
-              }
-            // return $link;
+             //if (is_object($link)) {
+             //   echo 'It Worked!';
+             // }
+            return $link;
         } catch(PDOException $e) {
             // echo 'It didnt work, error: ' . $e->getMessage();
             header('Location: /phpmotors/view/500.php');
