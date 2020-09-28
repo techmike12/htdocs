@@ -1,6 +1,6 @@
 <nav>
     <ul class="navigation">
-        <li><a href="#">Home</a></li>
+        <li><a href="/phpmotors/home.php">Home</a></li>
         <li><a href="#">Classics</a></li>
         <li><a href="#">Sports</a></li>
         <li><a href="#">SUV</a></li>

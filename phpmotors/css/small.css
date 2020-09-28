@@ -35,6 +35,11 @@ p {
     color: #002D52;
 }
 
+#sorry {
+    font-size: 1.5em;
+    margin-left: 2%;
+}
+
 nav {
     background-color: #3a3a3a;
     text-align: center;

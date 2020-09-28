@@ -1,0 +1,38 @@
+INSERT INTO clients
+	(clientFirstname, clientLastname, clientEmail, clientPassword, comment)
+VALUES
+	('Tony', 'Stark', 'tony@starkent.com', 'Iam1ronM@n', '"I am the real Ironman"')
+
+
+UPDATE
+    clients
+SET
+    clientLevel = '3'
+
+
+UPDATE
+    inventory
+SET
+    invDescription = replace(invDescription, 'small interior', 'spacious interior');
+
+
+SELECT
+    inventory.invModel, carclassification.classificationName
+FROM
+    inventory
+INNER JOIN carclassification ON inventory.classificationId=carclassification.classificationId
+WHERE
+    inventory.classificationId = 1
+
+
+DELETE
+FROM
+    inventory
+WHERE
+    invModel = 'Jeep' AND invModel = 'Wrangler'
+
+
+UPDATE
+    inventory
+SET
+    invImage = concat('/phpmotors', invImage) AND invThumbnail = concat('/phpmotors', invThumbnail)
