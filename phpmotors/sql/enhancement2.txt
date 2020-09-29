@@ -14,6 +14,8 @@ UPDATE
     inventory
 SET
     invDescription = replace(invDescription, 'small interior', 'spacious interior');
+WHERE
+    invId = 12
 
 
 SELECT
