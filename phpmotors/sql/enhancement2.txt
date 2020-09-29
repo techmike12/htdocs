@@ -33,6 +33,6 @@ WHERE
 
 
 UPDATE
-    inventory
+    phpmotors.inventory
 SET
-    invImage = concat('/phpmotors', invImage) AND invThumbnail = concat('/phpmotors', invThumbnail)
+    invImage = concat('/phpmotors', invImage), invThumbnail = concat('/phpmotors', invThumbnail)
