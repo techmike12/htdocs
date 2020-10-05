@@ -18,7 +18,8 @@
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
     </header>
     <nav id="page_nav">
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/navigation.php'; ?>
+        <?php #require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/navigation.php'; ?>
+        <?php echo $navList; ?>
     </nav>
     <main>
         <h1>Content Title here</h1>

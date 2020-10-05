@@ -43,10 +43,10 @@ p {
 nav {
     background-color: #3a3a3a;
     text-align: center;
+    width: 100%;
 }
 
 .navigation {
-	list-style-type: none;
     overflow: hidden;
 }
 
@@ -54,6 +54,7 @@ nav {
 .navigation li {
     height: 50px;
     float: left;
+    list-style-type: none;
 }
 
 .navigation a {
