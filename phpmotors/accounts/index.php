@@ -30,9 +30,10 @@
     }
 
     switch ($action){
-        case '':
-            break;
-        default:
-            break;
+        case 'register':
+            include '../view/registration.php';
+        break;
+        case 'login':
+            include '../view/login.php';
     }
 ?>
