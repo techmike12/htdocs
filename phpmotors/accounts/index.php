@@ -35,5 +35,6 @@
         break;
         case 'login':
             include '../view/login.php';
+        break;
     }
 ?>
