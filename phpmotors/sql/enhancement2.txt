@@ -8,6 +8,8 @@ UPDATE
     clients
 SET
     clientLevel = '3'
+WHERE
+    clientEmail = 'tony@starkent.com'
 
 
 UPDATE
@@ -31,7 +33,7 @@ DELETE
 FROM
     inventory
 WHERE
-    invMake = 'Jeep' AND invModel = 'Wrangler'
+    invId = 1
 
 
 UPDATE
