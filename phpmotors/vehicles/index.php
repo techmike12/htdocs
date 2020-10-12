@@ -39,6 +39,10 @@
 
     # Need to think of what this will look like
     switch ($action){
+        case 'addC':
+            break;
+        case 'addV':
+            break;
         case 'addClass':
             include '../view/add-classification.php';
             break;
