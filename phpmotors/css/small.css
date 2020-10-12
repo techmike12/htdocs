@@ -227,6 +227,15 @@ form li input{
     text-decoration: underline;
 }
 
+/*Add car and classification*/
+.addCar{
+    text-align: center;
+    font-family: Righteous;
+    color: #8d8d88;
+    font-size: 1em;
+    margin-left: 2%;
+}
+
 footer {
     height: 100px;
     width: 100%;
