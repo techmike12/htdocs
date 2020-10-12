@@ -39,7 +39,7 @@
             </li>
         </ul>
     </form>
-    <a href="/phpmotors/accounts/index.php?action=register" id="needReg">Not a member yet?</a>
+    <a href="/phpmotors/accounts/index.php?action=newClient" id="needReg">Not a member yet?</a>
     <hr id="break">
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>

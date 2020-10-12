@@ -7,6 +7,11 @@
         padding: 15px;
     }
 
+    .center{
+        text-align: left;
+        margin-left: 2%;
+    }
+
     #content {
         width: 70%;
         position: absolute;

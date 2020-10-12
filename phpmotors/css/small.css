@@ -219,6 +219,14 @@ form li input{
     margin-left: 5rem;
 }
 
+/*Notification from controller about account creation*/
+.center{
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+}
+
 footer {
     height: 100px;
     width: 100%;
