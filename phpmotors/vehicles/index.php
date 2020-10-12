@@ -40,8 +40,16 @@
     # Need to think of what this will look like
     switch ($action){
         case 'addC':
+            // Filter and store the data
+            // Check for missing data
+            // Send data to the model
+            // Check and report results
             break;
         case 'addV':
+            // Filter and store the data
+            // Check for missing data
+            // Send data to the model
+            // Check and report results
             break;
         case 'addClass':
             include '../view/add-classification.php';
