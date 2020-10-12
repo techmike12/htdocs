@@ -27,6 +27,7 @@
 
     # variable to build a dynamic drop-down select list
     $classificationList = getClassifications();
+    # Get Array Length
     #Test array
     #var_dump($classifications);
     #    exit;
