@@ -29,30 +29,31 @@
         echo $message;
     }
     ?>
+    <p id="note">*Note All Fields are Required</p>
     <form id="forms" method="post" action="/phpmotors/vehicles/index.php">
         <?php echo $classSelect; ?>
 
         <label for="invMake">Make:</label>
         <input type="text" id="invMake" name="invMake">
-        
+
         <label for="invModel">Model:</label>
         <input type="text" id="invModel" name="invModel">
-        
+
         <label for="invDescription">Description:</label>
         <input type="text" id="invDescription" name="invDescription">
-        
+
         <label for="invImage">Image Path:</label>
         <input type="text" id="invImage" name="invImage" value="/phpmotors/images/no-image.png">
-        
+
         <label for="invThumbnail">Thumbnail Path:</label>
         <input type="text" id="invThumbnail" name="invThumbnail" value="/phpmotors/images/no-image.png">
-        
+
         <label for="invPrice">Price:</label>
         <input type="text" id="invPrice" name="invPrice">
-        
+
         <label for="invStock"># in Stock:</label>
         <input type="text" id="invStock" name="invStock">
-        
+
         <label for="invColor">Color:</label>
         <input type="text" id="invColor" name="invColor">
         <input type="submit" name="submit" id="register-submit" value="Add Vehicle" class="submitBtn">

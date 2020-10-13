@@ -232,6 +232,14 @@ form input.submitBtn {
     margin-left: 1rem;
 }
 
+#note {
+    padding: 5px;
+    margin-left: 10px;
+    font-style: italic;
+    color: black;
+    font-weight: bold;
+}
+
 footer {
     height: 100px;
     width: 100%;
