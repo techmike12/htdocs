@@ -32,7 +32,7 @@
 
     # Build Selction for Classifications
     $classSelect = '<label for="classificationId">Classification :</label>';
-    $classSelect .= '<select name="classificationId" id="cars">';
+    $classSelect .= '<select name="classificationId" id="classificationId">';
     foreach ($classifications as $classElement) {
         $classSelect .= "<option value='$classElement[classificationId]'>$classElement[classificationName]</option>";
     }
@@ -59,8 +59,8 @@
             $addCoutcome = addClass($classificationName);
             # Check and report results
             if($addCoutcome === 1){
-                $message = "<p class='center'>Thanks for adding $classificationName.</p>";
-                include '../view/add-classification.php';
+                #$message = "<p class='center'>Thanks for adding $classificationName.</p>";
+                include '../view/vehicle-management.php';
                 exit;
                } else {
                 $message = "<p class='center'>Sorry $classificationName failed to add. Please try again.</p>";
@@ -79,7 +79,7 @@
             $invStock = filter_input(INPUT_POST, 'invStock');
             $invColor = filter_input(INPUT_POST, 'invColor');
             $classificationId = filter_input(INPUT_POST, 'classificationId');
-            
+
             # Check for missing data
             if(empty($invMake) || empty($invModel) || empty($invDescription) || empty($invPrice) || empty($invStock) || empty($invColor)) {
                 $message = '<p class="center">Please provide information for all empty form fields.</p>';
