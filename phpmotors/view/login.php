@@ -24,6 +24,11 @@
     <main>
         <h1>Sign in</h1>
     </main>
+    <?php
+    if (isset($message)) {
+        echo $message;
+    }
+    ?>
     <form id="login" method="post">
         <ul>
             <li>
