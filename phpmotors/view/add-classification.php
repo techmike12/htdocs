@@ -29,7 +29,12 @@
         echo $message;
     }
     ?>
-    <!--Form for adding Classification-->
+    <form id="forms" method="post" action="/phpmotors/vehicles/index.php">
+        <label for="classificationName">Classification Name:</label>
+        <input type="text" id="classificationName" name="classificationName">
+        <input type="submit" name="submit" id="register-submit" value="Submit" class="submitBtn">
+        <input type="hidden" name="action" value="addC">
+    </form>
     <hr id="break">
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>

@@ -4,23 +4,23 @@
 
 
 // Add Vehicles Function
-function addVehicle(){
-    $db = phpmotorsConnect($invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId);
+function addVehicle($invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId){
+    $db = phpmotorsConnect();
     // SQL Statements
     $sql = 'INSERT INTO inventory (invMake, invModel, invDescription, invImage, invThumbnail, invPrice, invStock, invColor, classificationId)
         VALUES (:invMake, :invModel, :invDescription, :invImage, :invThumbnail, :invPrice, :invStock, :invColor, :classificationId)';
 // Create the prepared statement using the php_motors connection
 $stmt = $db->prepare($sql);
 // Replace placeholders with values and type of data
-$stmt->bindValue(':clientFirstname', $invMake, PDO::PARAM_STR);
-$stmt->bindValue(':clientLastname', $invModel, PDO::PARAM_STR);
-$stmt->bindValue(':clientEmail', $invDescription, PDO::PARAM_STR);
-$stmt->bindValue(':clientPassword', $invImage, PDO::PARAM_STR);
-$stmt->bindValue(':clientFirstname', $invThumbnail, PDO::PARAM_STR);
-$stmt->bindValue(':clientLastname', $invPrice, PDO::PARAM_STR);
-$stmt->bindValue(':clientEmail', $invStock, PDO::PARAM_STR);
-$stmt->bindValue(':clientPassword', $invColor, PDO::PARAM_STR);
-$stmt->bindValue(':clientPassword', $classificationId, PDO::PARAM_STR);
+$stmt->bindValue(':invMake', $invMake, PDO::PARAM_STR);
+$stmt->bindValue(':invModel', $invModel, PDO::PARAM_STR);
+$stmt->bindValue(':invDescription', $invDescription, PDO::PARAM_STR);
+$stmt->bindValue(':invImage', $invImage, PDO::PARAM_STR);
+$stmt->bindValue(':invThumbnail', $invThumbnail, PDO::PARAM_STR);
+$stmt->bindValue(':invPrice', $invPrice, PDO::PARAM_STR);
+$stmt->bindValue(':invStock', $invStock, PDO::PARAM_STR);
+$stmt->bindValue(':invColor', $invColor, PDO::PARAM_STR);
+$stmt->bindValue(':classificationId', $classificationId, PDO::PARAM_STR);
 
 // Insert Data
 $stmt->execute();
@@ -34,15 +34,14 @@ return $rowsChanged;
 }
 
 // Add Classification Function
-function addClass(){
-    $db = phpmotorsConnect($classificationId, $classificationName);
+function addClass($classificationName){
+    $db = phpmotorsConnect();
     // SQL Statements
-    $sql = 'INSERT INTO carclassification (classificationId, classificationName)
-        VALUES (:classificationId, :classificationName)';
+    $sql = 'INSERT INTO carclassification (classificationName)
+        VALUES (:classificationName)';
 // Create the prepared statement using the php_motors connection
 $stmt = $db->prepare($sql);
 // Replace placeholders with values and type of data
-$stmt->bindValue(':classificationId', $classificationId, PDO::PARAM_STR);
 $stmt->bindValue(':classificationName', $classificationName, PDO::PARAM_STR);
 // Insert Data
 $stmt->execute();

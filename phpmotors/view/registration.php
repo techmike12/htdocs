@@ -29,29 +29,20 @@
         echo $message;
     }
     ?>
-    <form id="login" method="post" action="/phpmotors/accounts/index.php">
-        <ul>
-            <li>
-                <label for="firstname">First Name:</label>
-                <input type="text" id="firstname" name="clientFirstname">
-            </li>
-            <li>
-                <label for="lastname">Last Name:</label>
-                <input type="text" id="lastname" name="clientLastname">
-            </li>
-            <li>
-                <label for="address">Email Address:</label>
-                <input type="text" id="address" name="clientEmail">
-            </li>
-            <li>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="clientPassword">
-            </li>
-            <li>
-                <input type="submit" name="submit" id="register-submit" value="Register" class="submitBtn">
-                <input type="hidden" name="action" value="register">
-            </li>
-        </ul>
+    <form id="forms" method="post" action="/phpmotors/accounts/index.php">
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="clientFirstname">
+        
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="clientLastname">
+        
+        <label for="address">Email Address:</label>
+        <input type="text" id="address" name="clientEmail">
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="clientPassword">
+        <input type="submit" name="submit" id="register-submit" value="Register" class="submitBtn">
+        <input type="hidden" name="action" value="register">
     </form>
     <hr id="break">
     <footer>

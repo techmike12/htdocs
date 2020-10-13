@@ -52,4 +52,8 @@
     #background {
         background-image: url(/phpmotors/images/site/checkerboard.jpg);
     }
+
+    input[type=text], [type=password], select {
+        width: 15%;
+    }
 }

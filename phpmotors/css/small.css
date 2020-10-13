@@ -179,46 +179,6 @@ h2 {
     height: 5px
 }
 
-/* Login/Registration Form*/
-#login {
-    background-repeat: no-repeat;
-    padding-left: 5px;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-}
-
-#login li{
-    list-style-type: none;
-    padding: .75rem 1.5rem;
-}
-
-#login label{
-    width: 100%;
-    max-width: 10rem;
-    padding: .75rem;
-    font-size: 1rem;
-    padding-right:10px;
-}
-
-form input.submitBtn {
-    display: block;
-    border: none;
-    background-color: #4c96d7;
-    color: white;
-    border-radius: 12px;
-    padding: .75rem 1.5rem;
-    width: 100%;
-    max-width: 10em;
-}
-
-form li input{
-    max-width: 10rem;
-}
-
-#needReg{
-    margin-left: 5rem;
-}
-
 /*Notification from controller about account creation*/
 .center{
     color: red;
@@ -234,6 +194,42 @@ form li input{
     color: #8d8d88;
     font-size: 1em;
     margin-left: 2%;
+}
+
+#forms {
+    background-repeat: no-repeat;
+    padding-left: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#forms label {
+    font-weight: bold;
+}
+
+input[type=text], [type=password], select {
+    width: 35%;
+    padding: 5px 5px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form input.submitBtn {
+    display: block;
+    border: none;
+    background-color: #4c96d7;
+    color: white;
+    border-radius: 12px;
+    padding: .75rem 1.5rem;
+    width: 100%;
+    max-width: 10em;
+}
+
+#needReg{
+    margin-left: 1rem;
 }
 
 footer {
