@@ -31,10 +31,12 @@
     ?>
     <form id="forms" method="post">
         <label for="address">Email Address:</label>
-        <input type="text" id="address" name="name">
-                
+        <input type="email" id="address" name="name" required>
+
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
+        <span>Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
+        <input type="password" id="password" name="password" required
+        pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
         <input type="submit" id="register-submit" value="Sign-in" class="submitBtn">
     </form>
     <a href="/phpmotors/accounts/index.php?action=newClient" id="needReg">Not a member yet?</a>

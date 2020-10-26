@@ -31,7 +31,7 @@
     ?>
     <form id="forms" method="post" action="/phpmotors/vehicles/index.php">
         <label for="classificationName">Classification Name:</label>
-        <input type="text" id="classificationName" name="classificationName">
+        <input type="text" id="classificationName" name="classificationName" required>
         <input type="submit" name="submit" id="register-submit" value="Submit" class="submitBtn">
         <input type="hidden" name="action" value="addC">
     </form>

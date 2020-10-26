@@ -31,16 +31,18 @@
     ?>
     <form id="forms" method="post" action="/phpmotors/accounts/index.php">
         <label for="firstname">First Name:</label>
-        <input type="text" id="firstname" name="clientFirstname">
-        
+        <input type="text" id="firstname" <?php if(isset($clientFirstname)){echo "value='$clientFirstname'";}  ?> name="clientFirstname" required>
+
         <label for="lastname">Last Name:</label>
-        <input type="text" id="lastname" name="clientLastname">
-        
+        <input type="text" id="lastname" <?php if(isset($clientLastname)){echo "value='$clientLastname'";}  ?> name="clientLastname" required>
+
         <label for="address">Email Address:</label>
-        <input type="text" id="address" name="clientEmail">
-        
+        <input type="email" id="address" <?php if(isset($clientEmail)){echo "value='$clientEmail'";}  ?> name="clientEmail" required>
+
         <label for="password">Password:</label>
-        <input type="password" id="password" name="clientPassword">
+        <span>Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
+        <input type="password" id="password" name="clientPassword" required
+        pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
         <input type="submit" name="submit" id="register-submit" value="Register" class="submitBtn">
         <input type="hidden" name="action" value="register">
     </form>
