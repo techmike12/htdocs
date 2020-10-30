@@ -62,7 +62,7 @@ $classSelect .= '</select>';
         <input type="text" id="invThumbnail" <?php if(isset($invThumbnail)){echo "value='$invThumbnail'";}  ?> name="invThumbnail" value="/phpmotors/images/no-image.png" required>
 
         <label for="invPrice">Price:</label>
-        <input type="number" id="invPrice" <?php if(isset($invPrice)){echo "value='$invPrice'";}  ?> name="invPrice" required>
+        <input type="number" step="0.01" min=”0″ id="invPrice" <?php if(isset($invPrice)){echo "value='$invPrice'";}  ?> name="invPrice" required>
 
         <label for="invStock"># in Stock:</label>
         <input type="number" id="invStock" <?php if(isset($invStock)){echo "value='$invStock'";}  ?> name="invStock" required>

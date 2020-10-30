@@ -72,7 +72,7 @@
             $invDescription = filter_input(INPUT_POST, 'invDescription', FILTER_SANITIZE_STRING);
             $invImage = filter_input(INPUT_POST, 'invImage', FILTER_SANITIZE_STRING);
             $invThumbnail = filter_input(INPUT_POST, 'invThumbnail', FILTER_SANITIZE_STRING);
-            $invPrice = filter_input(INPUT_POST, 'invPrice', FILTER_SANITIZE_STRING);
+            $invPrice = filter_input(INPUT_POST, 'invPrice', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
             $invStock = filter_input(INPUT_POST, 'invStock', FILTER_SANITIZE_STRING);
             $invColor = filter_input(INPUT_POST, 'invColor', FILTER_SANITIZE_STRING);
             $classificationId = filter_input(INPUT_POST, 'classificationId', FILTER_SANITIZE_STRING);
