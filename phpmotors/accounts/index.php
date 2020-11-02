@@ -96,6 +96,7 @@
 
             // Run basic checks, return if errors
             if (empty($clientEmail) || empty($passwordCheck)) {
+                // Getting 0 from passwordCheck?
                 echo $passwordCheck;
                 $_SESSION['message'] = '<p class="center">Please provide a valid email address and password.</p>';
                 include '../view/login.php';
