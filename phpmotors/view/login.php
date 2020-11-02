@@ -29,16 +29,15 @@
         echo $_SESSION['message'];
     }
     ?>
-    <form id="forms" method="post" action="/accounts/">
+    <form id="forms" method="post" action="/phpmotors/accounts/">
         <label for="address">Email Address:</label>
         <input type="email" id="address" name="name" required>
-
         <label for="password">Password:</label>
         <span>Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
         <input type="password" id="password" name="password" required
         pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
         <input type="submit" id="register-submit" value="Sign-in" class="submitBtn">
-        <input type="hidden" name="action" value="Login">
+        <input type="hidden" name="action" value="admin">
     </form>
     <a href="/phpmotors/accounts/index.php?action=newClient" id="needReg">Not a member yet?</a>
     <hr id="break">

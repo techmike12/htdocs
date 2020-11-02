@@ -29,7 +29,7 @@
         echo $message;
     }
     ?>
-    <form id="forms" method="post" action="/phpmotors/accounts/index.php">
+    <form id="forms" method="post" action="/phpmotors/accounts/">
         <label for="firstname">First Name:</label>
         <input type="text" id="firstname" <?php if(isset($clientFirstname)){echo "value='$clientFirstname'";}  ?> name="clientFirstname" required>
 
