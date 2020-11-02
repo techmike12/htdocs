@@ -57,7 +57,7 @@
             # Check and report results
             if($addCoutcome === 1){
                 #$message = "<p class='center'>Thanks for adding $classificationName.</p>";
-                include '../view/vehicle-management.php';
+                header('Location:../vehicles/index.php');
                 exit;
                } else {
                 $message = "<p class='center'>Sorry $classificationName failed to add. Please try again.</p>";
