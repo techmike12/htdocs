@@ -19,6 +19,16 @@ header {
     height: 80px;
 }
 
+#welcome {
+    float: right;
+    font-family: Righteous;
+    color: #4c96d7;
+    font-size: 1em;
+    margin-top: 2%;
+    margin-right: 5%;
+    text-decoration: none;
+}
+
 #account{
     float: right;
     font-family: Righteous;

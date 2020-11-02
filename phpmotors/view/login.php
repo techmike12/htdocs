@@ -25,11 +25,11 @@
         <h1>Sign in</h1>
     </main>
     <?php
-    if (isset($message)) {
-        echo $message;
+    if (isset($_SESSION['message'])) {
+        echo $_SESSION['message'];
     }
     ?>
-    <form id="forms" method="post">
+    <form id="forms" method="post" action="/accounts/">
         <label for="address">Email Address:</label>
         <input type="email" id="address" name="name" required>
 
@@ -38,6 +38,7 @@
         <input type="password" id="password" name="password" required
         pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
         <input type="submit" id="register-submit" value="Sign-in" class="submitBtn">
+        <input type="hidden" name="action" value="Login">
     </form>
     <a href="/phpmotors/accounts/index.php?action=newClient" id="needReg">Not a member yet?</a>
     <hr id="break">
