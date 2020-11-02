@@ -1,3 +1,9 @@
+<?php
+    // Check if logged in
+    if (!$_SESSION) {
+        header('Location:../index.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

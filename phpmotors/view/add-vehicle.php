@@ -11,6 +11,11 @@ foreach ($classifications as $classElement) {
     $classSelect .= ">$classElement[classificationName]</option>";
 }
 $classSelect .= '</select>';
+
+// Check if logged in
+if (!$_SESSION) {
+    header('Location:../index.php');
+}
 ?><!DOCTYPE html>
 <html lang="en">
 <head>

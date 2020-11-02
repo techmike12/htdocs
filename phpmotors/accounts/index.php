@@ -92,12 +92,11 @@
             // Check email after sanitizing
             $clientEmail = checkEmail($clientEmail);
             // Check password after sanitizing
-            $passwordCheck = checkPassword($clientPassword);
+            $checkPassword = checkPassword($clientPassword);
 
             // Run basic checks, return if errors
-            if (empty($clientEmail) || empty($passwordCheck)) {
-                // Getting 0 from passwordCheck?
-                echo $passwordCheck;
+            if (empty($clientEmail) || empty($checkPassword)) {
+                // Getting 0 from checkPassword?
                 $_SESSION['message'] = '<p class="center">Please provide a valid email address and password.</p>';
                 include '../view/login.php';
                 exit;
@@ -130,11 +129,13 @@
             $_SESSION['clientData'] = $clientData;
 
             // Send them to the admin view
-            echo $action;
             include '../view/admin.php';
-            exit;
         break;
-
+        // Logout case
+        case 'logout':
+            session_destroy();
+            header('Location:../index.php');
+        break;
         // Default case
         default:
         //Send to admin.php

@@ -39,6 +39,21 @@ header {
     text-decoration: none;
 }
 
+#logged {
+    margin-left: 2%;
+    color: #002D52;
+    font-weight: bold;
+}
+
+#adminList {
+    font-size: 1.2em
+}
+
+#management {
+    margin-left: 2%;
+    font-weight: bold;
+}
+
 p {
     margin: 0;
     font-size: 1em;
