@@ -52,7 +52,7 @@ if (!$_SESSION) {
         <?php echo $classSelect; ?>
 
         <label for="invMake">Make:</label>
-        <input type="text" id="invMake" <?php if(isset($invMake)){echo "value='$invMake'";}  ?> name="invMake" required>
+        <input type="text" id="invMake" <?php if(isset($invMake)){echo "value='$invMake'";}  ?> name="invMake">
 
         <label for="invModel">Model:</label>
         <input type="text" id="invModel" <?php if(isset($invModel)){echo "value='$invModel'";}  ?> name="invModel" required>
