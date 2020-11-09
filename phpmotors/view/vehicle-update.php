@@ -85,11 +85,12 @@ if ($_SESSION['clientData']['clientLevel'] < 2) {
         <input type="number" id="invStock" name="invStock" required <?php if(isset($invStock)){echo "value='$invStock'";} elseif(isset($invInfo['invStock'])) {echo "value='$invInfo[invStock]'"; }  ?>>
 
         <label for="invColor">Color:</label>
-        <input type="text" id="invColor" name="invColor" required <?php if(isset($invColor)){ echo "value='invColor'"; } elseif(isset($invInfo['invColor'])) {echo "value='$invInfo[invColor]'"; } ?>>
+        <input type="text" id="invColor" name="invColor" required <?php if(isset($invColor)){echo "value='$invColor'";} elseif(isset($invInfo['invColor'])) {echo "value='$invInfo[invColor]'"; } ?>>
         <input type="submit" name="submit" id="register-submit" value="Update Vehicle" class="submitBtn">
         <input type="hidden" name="action" value="updateVehicle">
+        <input type="hidden" name="invId" value="
         <?php if(isset($invInfo['invId'])){ echo $invInfo['invId'];}
-elseif(isset($invId)){ echo $invId; } ?>
+elseif(isset($invId)){ echo $invId; } ?>">
     </form>
     <hr id="break">
     <footer>

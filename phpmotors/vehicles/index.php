@@ -144,6 +144,7 @@
             }
             # Send data to the model
             $updateResult = updateVehicle($invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId, $invId);
+            echo $invId;
             # Check and report results
             if($updateResult){
                 $message = "<p class='center'>Congratulations, the $invMake $invModel was successfully updated.</p>";
@@ -151,7 +152,6 @@
                 header('location: /phpmotors/vehicles/');
                 exit;
                } else {
-                echo $updateResult;
                 $message = "<p class='center'>Sorry this failed to update. Please try again.</p>";
                 include '../view/vehicle-update.php';
                 exit;

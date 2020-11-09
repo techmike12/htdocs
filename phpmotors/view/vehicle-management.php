@@ -43,9 +43,6 @@
     <a class="addCar" href="/phpmotors/vehicles/index.php?action=addVehicle">Add Vehicle</a>
     <!--Display Classification list-->
     <?php
-    if (isset($message)) {
-        echo $message;
-    }
     if (isset($classificationList)) {
         echo '<h2>Vehicles By Classification</h2>';
         echo '<p id="classList">Choose a classification to see those vehicles</p>';
