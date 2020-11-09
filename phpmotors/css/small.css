@@ -46,7 +46,8 @@ header {
 }
 
 #adminList {
-    font-size: 1.2em
+    font-size: 1.2em;
+    font-family: Righteous;
 }
 
 #management {
@@ -114,6 +115,12 @@ h2 {
     font-family: Righteous;
     padding-left: 10px;
     font-size: 1em;
+}
+
+#explain {
+    padding: 5px;
+    color: black;
+    font-family: Righteous;
 }
 
 #classList {
@@ -241,16 +248,18 @@ h2 {
     margin-left: 2%;
 }
 
-#forms {
+#forms, #infoform, #passform {
     background-repeat: no-repeat;
     padding-left: 15px;
     display: grid;
     grid-template-columns: 1fr;
 }
 
-#forms label {
+#forms, #infoform, #passform label {
     font-weight: bold;
 }
+
+
 
 input[type=text], [type=password], [type=number], select {
     width: 35%;
