@@ -250,7 +250,6 @@
 
             // Send data to the model
             $updateResult = updatePassword($hashedPassword, $clientId);
-            console.log($updateResult);
 
             // Check and report results
             if($updateResult){
