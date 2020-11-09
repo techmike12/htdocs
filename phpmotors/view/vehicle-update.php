@@ -79,10 +79,10 @@ if ($_SESSION['clientData']['clientLevel'] < 2) {
         <input type="text" id="invThumbnail" name="invThumbnail" required <?php if(isset($invThumbnail)){ echo "value='invThumbnail'"; } elseif(isset($invInfo['invThumbnail'])) {echo "value='$invInfo[invThumbnail]'"; } ?>>
 
         <label for="invPrice">Price:</label>
-        <input type="number" step="0.01" min=”0″ id="invPrice" name="invPrice" required <?php if(isset($invPrice)){ echo "value='invPrice'"; } elseif(isset($invInfo['invPrice'])) {echo "value='$invInfo[invPrice]'"; } ?>>
+        <input type="number" step="0.01" min=”0″ id="invPrice" name="invPrice" required <?php if(isset($invPrice)){echo "value='$invPrice'";} elseif(isset($invInfo['invPrice'])) {echo "value='$invInfo[invPrice]'"; } ?>>
 
         <label for="invStock"># in Stock:</label>
-        <input type="number" id="invStock" name="invStock" required <?php if(isset($invStock)){ echo "value='invStock'"; } elseif(isset($invInfo['invStock'])) {echo "value='$invInfo[invStock]'"; } ?>>
+        <input type="number" id="invStock" name="invStock" required <?php if(isset($invStock)){echo "value='$invStock'";} elseif(isset($invInfo['invStock'])) {echo "value='$invInfo[invStock]'"; }  ?>>
 
         <label for="invColor">Color:</label>
         <input type="text" id="invColor" name="invColor" required <?php if(isset($invColor)){ echo "value='invColor'"; } elseif(isset($invInfo['invColor'])) {echo "value='$invInfo[invColor]'"; } ?>>

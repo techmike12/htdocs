@@ -70,15 +70,15 @@
             break;
         case 'addV':
             # Filter and store the data
+            $classificationId = filter_input(INPUT_POST, 'classificationId', FILTER_SANITIZE_NUMBER_INT);
             $invMake = filter_input(INPUT_POST, 'invMake', FILTER_SANITIZE_STRING);
             $invModel = filter_input(INPUT_POST, 'invModel', FILTER_SANITIZE_STRING);
             $invDescription = filter_input(INPUT_POST, 'invDescription', FILTER_SANITIZE_STRING);
             $invImage = filter_input(INPUT_POST, 'invImage', FILTER_SANITIZE_STRING);
             $invThumbnail = filter_input(INPUT_POST, 'invThumbnail', FILTER_SANITIZE_STRING);
             $invPrice = filter_input(INPUT_POST, 'invPrice', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-            $invStock = filter_input(INPUT_POST, 'invStock', FILTER_SANITIZE_STRING);
+            $invStock = filter_input(INPUT_POST, 'invStock', FILTER_SANITIZE_NUMBER_INT);
             $invColor = filter_input(INPUT_POST, 'invColor', FILTER_SANITIZE_STRING);
-            $classificationId = filter_input(INPUT_POST, 'classificationId', FILTER_SANITIZE_STRING);
 
             # Check for missing data
             if(empty($invMake) || empty($invModel) || empty($invDescription) || empty($invPrice) || empty($invStock) || empty($invColor)) {
@@ -125,32 +125,33 @@
         break;
         case 'updateVehicle':
             # Filter and store the data
+            $classificationId = filter_input(INPUT_POST, 'classificationId', FILTER_SANITIZE_NUMBER_INT);
             $invMake = filter_input(INPUT_POST, 'invMake', FILTER_SANITIZE_STRING);
             $invModel = filter_input(INPUT_POST, 'invModel', FILTER_SANITIZE_STRING);
             $invDescription = filter_input(INPUT_POST, 'invDescription', FILTER_SANITIZE_STRING);
             $invImage = filter_input(INPUT_POST, 'invImage', FILTER_SANITIZE_STRING);
             $invThumbnail = filter_input(INPUT_POST, 'invThumbnail', FILTER_SANITIZE_STRING);
             $invPrice = filter_input(INPUT_POST, 'invPrice', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-            $invStock = filter_input(INPUT_POST, 'invStock', FILTER_SANITIZE_STRING);
+            $invStock = filter_input(INPUT_POST, 'invStock', FILTER_SANITIZE_NUMBER_INT);
             $invColor = filter_input(INPUT_POST, 'invColor', FILTER_SANITIZE_STRING);
-            $classificationId = filter_input(INPUT_POST, 'classificationId', FILTER_SANITIZE_STRING);
             $invId = filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT);
 
             # Check for missing data
             if(empty($invMake) || empty($invModel) || empty($invDescription) || empty($invPrice) || empty($invStock) || empty($invColor)) {
-                $message = '<p class="center">Please provide updated information.</p>';
+                $message = '<p class="center">Please provide updated information. Also comfirm you selected a </p>';
                 include '../view/add-vehicle.php';
                 exit;
             }
             # Send data to the model
             $updateResult = updateVehicle($invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId, $invId);
             # Check and report results
-            if($updateResult === 1){
+            if($updateResult){
                 $message = "<p class='center'>Congratulations, the $invMake $invModel was successfully updated.</p>";
                 $_SESSION['message'] = $message;
                 header('location: /phpmotors/vehicles/');
                 exit;
                } else {
+                echo $updateResult;
                 $message = "<p class='center'>Sorry this failed to update. Please try again.</p>";
                 include '../view/vehicle-update.php';
                 exit;

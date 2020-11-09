@@ -9,27 +9,27 @@ function addVehicle($invMake, $invModel, $invDescription, $invImage, $invThumbna
     // SQL Statements
     $sql = 'INSERT INTO inventory (invMake, invModel, invDescription, invImage, invThumbnail, invPrice, invStock, invColor, classificationId)
         VALUES (:invMake, :invModel, :invDescription, :invImage, :invThumbnail, :invPrice, :invStock, :invColor, :classificationId)';
-// Create the prepared statement using the php_motors connection
-$stmt = $db->prepare($sql);
-// Replace placeholders with values and type of data
-$stmt->bindValue(':invMake', $invMake, PDO::PARAM_STR);
-$stmt->bindValue(':invModel', $invModel, PDO::PARAM_STR);
-$stmt->bindValue(':invDescription', $invDescription, PDO::PARAM_STR);
-$stmt->bindValue(':invImage', $invImage, PDO::PARAM_STR);
-$stmt->bindValue(':invThumbnail', $invThumbnail, PDO::PARAM_STR);
-$stmt->bindValue(':invPrice', $invPrice, PDO::PARAM_STR);
-$stmt->bindValue(':invStock', $invStock, PDO::PARAM_STR);
-$stmt->bindValue(':invColor', $invColor, PDO::PARAM_STR);
-$stmt->bindValue(':classificationId', $classificationId, PDO::PARAM_STR);
+    // Create the prepared statement using the php_motors connection
+    $stmt = $db->prepare($sql);
+    // Replace placeholders with values and type of data
+    $stmt->bindValue(':classificationId', $classificationId, PDO::PARAM_INT);
+    $stmt->bindValue(':invMake', $invMake, PDO::PARAM_STR);
+    $stmt->bindValue(':invModel', $invModel, PDO::PARAM_STR);
+    $stmt->bindValue(':invDescription', $invDescription, PDO::PARAM_STR);
+    $stmt->bindValue(':invImage', $invImage, PDO::PARAM_STR);
+    $stmt->bindValue(':invThumbnail', $invThumbnail, PDO::PARAM_STR);
+    $stmt->bindValue(':invPrice', $invPrice, PDO::PARAM_STR);
+    $stmt->bindValue(':invStock', $invStock, PDO::PARAM_INT);
+    $stmt->bindValue(':invColor', $invColor, PDO::PARAM_STR);
 
-// Insert Data
-$stmt->execute();
+    // Insert Data
+    $stmt->execute();
 
-// Number of rows changed
-$rowsChanged = $stmt->rowCount();
-// Close database connection
-$stmt->closeCursor();
-// Return rows
+    // Number of rows changed
+    $rowsChanged = $stmt->rowCount();
+    // Close database connection
+    $stmt->closeCursor();
+    // Return rows
 return $rowsChanged;
 }
 
@@ -79,36 +79,23 @@ function getInvItemInfo($invId){
    }
 
 // Updating Vehicles Function
-function updateVehicle($invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId, $invId){
+function updateVehicle($invMake, $invModel, $invDescription, $invImage,  $invThumbnail, $invPrice, $invStock, $invColor, $classificationId, $invId) {
     $db = phpmotorsConnect();
-    // SQL Statements
-    $sql = 'UPDATE inventory SET invMake = :invMake, invModel = :invModel,
-	invDescription = :invDescription, invImage = :invImage,
-	invThumbnail = :invThumbnail, invPrice = :invPrice,
-	invStock = :invStock, invColor = :invColor,
-	classificationId = :classificationId WHERE invId = :invId';
-    // Create the prepared statement using the php_motors connection
+    $sql = 'UPDATE inventory SET invMake = :invMake, invModel = :invModel, invDescription = :invDescription, invImage = :invImage, invThumbnail = :invThumbnail, invPrice = :invPrice, invStock = :invStock, invColor = :invColor, classificationId = :classificationId WHERE invId = :invId';
     $stmt = $db->prepare($sql);
-    // Replace placeholders with values and type of data
+    $stmt->bindValue(':classificationId', $classificationId, PDO::PARAM_INT);
     $stmt->bindValue(':invMake', $invMake, PDO::PARAM_STR);
     $stmt->bindValue(':invModel', $invModel, PDO::PARAM_STR);
     $stmt->bindValue(':invDescription', $invDescription, PDO::PARAM_STR);
     $stmt->bindValue(':invImage', $invImage, PDO::PARAM_STR);
     $stmt->bindValue(':invThumbnail', $invThumbnail, PDO::PARAM_STR);
     $stmt->bindValue(':invPrice', $invPrice, PDO::PARAM_STR);
-    $stmt->bindValue(':invStock', $invStock, PDO::PARAM_STR);
+    $stmt->bindValue(':invStock', $invStock, PDO::PARAM_INT);
     $stmt->bindValue(':invColor', $invColor, PDO::PARAM_STR);
-    $stmt->bindValue(':classificationId', $classificationId, PDO::PARAM_STR);
     $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
-
-    // Insert Data
     $stmt->execute();
-
-    // Number of rows changed
     $rowsChanged = $stmt->rowCount();
-    // Close database connection
     $stmt->closeCursor();
-    // Return rows
     return $rowsChanged;
-}
+  }
 ?>
