@@ -144,7 +144,6 @@
             }
             # Send data to the model
             $updateResult = updateVehicle($invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId, $invId);
-            echo $invId;
             # Check and report results
             if($updateResult){
                 $message = "<p class='center'>Congratulations, the $invMake $invModel was successfully updated.</p>";
