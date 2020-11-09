@@ -13,7 +13,7 @@ foreach ($classifications as $classElement) {
 $classSelect .= '</select>';
 
 // Check if logged in
-if (!$_SESSION) {
+if ($_SESSION['clientData']['clientLevel'] < 2) {
     header('Location:../index.php');
 }
 ?><!DOCTYPE html>

@@ -1,6 +1,6 @@
 <?php
     // Check if logged in
-    if (!$_SESSION) {
+    if ($_SESSION['clientData']['clientLevel'] < 2) {
         header('Location:../index.php');
     }
 ?>
@@ -37,12 +37,27 @@
     ?>
     <a class="addCar" href="/phpmotors/vehicles/index.php?action=addClass">Add Classification</a>
     <a class="addCar" href="/phpmotors/vehicles/index.php?action=addVehicle">Add Vehicle</a>
+    <!--Display Classification list-->
+    <?php
+    if (isset($message)) {
+        echo $message;
+    }
+    if (isset($classificationList)) {
+        echo '<h2>Vehicles By Classification</h2>';
+        echo '<p id="classList">Choose a classification to see those vehicles</p>';
+        echo $classificationList;
+    }
+    ?>
+    <noscript>
+        <p><strong>JavaScript Must Be Enabled to Use this Page.</strong></p>
+    </noscript>
+    <!--Display Vehicle options-->
+    <table id="inventoryDisplay"></table>
     <hr id="break">
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
     </footer>
     </div>
-    <script>
-    </script>
+    <script src="../js/inventory.js"></script>
 </body>
 </html>

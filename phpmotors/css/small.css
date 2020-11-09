@@ -110,7 +110,27 @@ h1{
 }
 
 h2 {
+    color: black;
+    font-family: Righteous;
+    padding-left: 10px;
+    font-size: 1em;
+}
+
+#classList {
     color: #3a3a3a;
+    font-family: Righteous;
+    padding-left: 10px;
+    font-size: .75em;
+}
+
+#classificationList {
+    margin-left: 10px;
+    font-family: Righteous;
+    width: auto;
+}
+
+#inventoryDisplay {
+    margin-left: 10px;
     font-family: Righteous;
 }
 

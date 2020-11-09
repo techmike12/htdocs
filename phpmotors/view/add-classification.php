@@ -1,6 +1,6 @@
 <?php
     // Check if logged in
-    if (!$_SESSION) {
+    if ($_SESSION['clientData']['clientLevel'] < 2) {
         header('Location:../index.php');
     }
 ?>
