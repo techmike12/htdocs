@@ -2,6 +2,10 @@
     // Check if logged in
     if ($_SESSION['clientData']['clientLevel'] < 2) {
         header('Location:../index.php');
+        exit;
+    }
+    if (isset($_SESSION['message'])) {
+        $message = $_SESSION['message'];
     }
 ?>
 <!DOCTYPE html>
@@ -61,3 +65,4 @@
     <script src="../js/inventory.js"></script>
 </body>
 </html>
+<?php unset($_SESSION['message']); ?>
