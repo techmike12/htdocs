@@ -31,7 +31,6 @@
     if ($action == NULL){
         $action = filter_input(INPUT_GET, 'action');
     }
-
     switch ($action){
         case 'register':
             // Filter and store the data

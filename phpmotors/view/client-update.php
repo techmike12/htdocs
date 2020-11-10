@@ -65,9 +65,10 @@ elseif(isset($clientId)){ echo $clientId; } ?>">
         <input type="password" id="password" name="clientPassword" required
         pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
         <input type="submit" name="submit" id="updatePass" value="Update Password" class="submitBtn">
-        <input type="hidden" name="action" value="
+        <input type="hidden" name="action" value="updatePass">
+        <input type="hidden" name="clientId" value="
         <?php if(isset($accountInfo['clientId'])){ echo $accountInfo['clientId'];}
-elseif(isset($clientId)){ echo $clientId; } $sessionEmail=$_SESSION['clientEmail']?>">
+elseif(isset($clientId)){ echo $clientId; }?>">
     </form>
     <noscript>
         <p><strong>JavaScript Must Be Enabled to Use this Page.</strong></p>
