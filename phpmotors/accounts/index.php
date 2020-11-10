@@ -240,7 +240,7 @@
             $hashCheck = password_verify($clientPassword, $clientData['clientPassword']);
             // If the hashes don't match create an error
             // and return to the login view
-            if(!$hashCheck) {
+            if($hashCheck) {
                 $message = '<p class="center">This matches your previous password, please enter a new one.</p>';
                 $_SESSION['message'] = $message;
                 include '../view/client-update.php';

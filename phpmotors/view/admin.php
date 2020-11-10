@@ -51,12 +51,12 @@
         echo "</ul>";
         if ($clientLevel > 1) {
             echo "<h2>Inventory Management</h2>";
-            echo "<p id='explain'>Use this link to manage the inventory.</p>";
-            echo "<a id='management' href='../vehicles/index.php'>Vehicle Management</a>";
+            echo "<p class='explain'>Use this link to manage the inventory.</p>";
+            echo "<a class='management' href='../vehicles/index.php'>Vehicle Management</a>";
         }
         echo "<h2>Account Management</h2>";
-        echo "<p id='explain'>Use this link to update account information.</p>";
-        echo "<a id='management' href='../accounts/index.php?action=clientUpdate&id=$clientId'>Update Account Information</a>";
+        echo "<p class='explain'>Use this link to update account information.</p>";
+        echo "<a class='management' href='../accounts/index.php?action=clientUpdate&id=$clientId'>Update Account Information</a>";
         ?>
     </main>
     <hr id="break">

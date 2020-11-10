@@ -50,7 +50,7 @@ header {
     font-family: Righteous;
 }
 
-#management {
+.management {
     margin-left: 2%;
     font-weight: bold;
 }
@@ -117,7 +117,7 @@ h2 {
     font-size: 1em;
 }
 
-#explain {
+.explain {
     padding: 5px;
     color: black;
     font-family: Righteous;
