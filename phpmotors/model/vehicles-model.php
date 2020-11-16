@@ -130,8 +130,8 @@ function getVehicleById($invId) {
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
     $stmt->execute();
-    $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $vehicleDetail = $stmt->fetch(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
-    return $details;
+    return $vehicleDetail;
 }
 ?>

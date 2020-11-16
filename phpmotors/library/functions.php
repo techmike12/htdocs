@@ -50,7 +50,7 @@ function buildVehiclesDisplay($vehicles) {
      $dv .= '<li>';
      $dv .= "<img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
      $dv .= '<hr id="inv-break">';
-     $dv .= "<h2><a href='/phpmotors/vehicles/?action=carDetails&$vehicle[invId]'>$vehicle[invMake] $vehicle[invModel]</a></h2>";
+     $dv .= "<h2><a href='/phpmotors/vehicles/?action=carDetails&invID=$vehicle[invId]'>$vehicle[invMake] $vehicle[invModel]</a></h2>";
      $dv .= "<span>$$vehicle[invPrice]</span>";
      $dv .= '</li>';
     }
@@ -62,8 +62,10 @@ function buildVehiclesDisplay($vehicles) {
 * Build details of vehicle selected
 */
 function buildVehicleDetails($vehicleDetail) {
-    $detv = '<h1>$vehicleDetail[invMake] $vehicleDetail[invModel]</h1>';
+    $detv = '<div id="inv-details">';
+    $detv .= "<h1>$vehicleDetail[invMake] $vehicleDetail[invModel]</h1>";
     $detv .= "<img src='$vehicleDetail[invImage]' alt='Image of $vehicleDetail[invMake] $vehicleDetail[invModel] on phpmotors.com'>";
+    $detv .= '</div>';
     return $detv;
 }
 ?>
