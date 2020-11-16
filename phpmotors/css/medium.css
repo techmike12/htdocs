@@ -70,6 +70,11 @@
 		font-size: 1rem;
     }
 
+    #inv-display li img {
+        max-width: auto;
+        height: 150px;
+    }
+
     #inv-display li{
         border: 1px #ccc solid;
 		max-width: 200px;
