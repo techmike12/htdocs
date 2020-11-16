@@ -60,4 +60,24 @@
     input[type=email] {
         width: 15%;
     }
+
+    #inv-display {
+        flex-flow: row wrap;
+        justify-content: flex-start;
+    }
+
+    #inv-display h2{
+		font-size: 1rem;
+    }
+
+    #inv-display li{
+        border: 1px #ccc solid;
+		max-width: 200px;
+		flex: 1 0 auto;
+		text-align: center;
+		height: 250px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+    }
 }
