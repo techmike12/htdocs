@@ -197,6 +197,7 @@
         case 'carDetails':
             $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
             $vehicleDetail = getVehicleById($invId);
+            $vehicleName = "$vehicleDetail[invMake] $vehicleDetail[invModel]";
             if(!count($vehicleDetail)){
                 $message = "<p class='notice'>Sorry, no vehicle details could be found.</p>";
             } else {

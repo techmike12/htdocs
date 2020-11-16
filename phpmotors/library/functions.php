@@ -50,7 +50,7 @@ function buildVehiclesDisplay($vehicles) {
      $dv .= '<li>';
      $dv .= "<img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
      $dv .= '<hr id="inv-break">';
-     $dv .= "<h2><a href='/phpmotors/vehicles/?action=carDetails&invID=$vehicle[invId]'>$vehicle[invMake] $vehicle[invModel]</a></h2>";
+     $dv .= "<h2><a href='/phpmotors/vehicles/?action=carDetails&invId=$vehicle[invId]'>$vehicle[invMake] $vehicle[invModel]</a></h2>";
      $dv .= "<span>$$vehicle[invPrice]</span>";
      $dv .= '</li>';
     }
@@ -62,9 +62,16 @@ function buildVehiclesDisplay($vehicles) {
 * Build details of vehicle selected
 */
 function buildVehicleDetails($vehicleDetail) {
+    $price = $vehicleDetail['invPrice'];
+    $price_format = number_format($price, 2, '.', ',');
     $detv = '<div id="inv-details">';
-    $detv .= "<h1>$vehicleDetail[invMake] $vehicleDetail[invModel]</h1>";
     $detv .= "<img src='$vehicleDetail[invImage]' alt='Image of $vehicleDetail[invMake] $vehicleDetail[invModel] on phpmotors.com'>";
+    $detv .= "<h2>Price: $$price_format</h2>";
+    $detv .= '<hr id="detv-break">';
+    $detv .= "<h2>$vehicleDetail[invMake] $vehicleDetail[invModel] Details</h2>";
+    $detv .= "<p>$vehicleDetail[invDescription]</p>";
+    $detv .= "<h2>Color: $vehicleDetail[invColor]</h2>";
+    $detv .= "<h2># in Stock: $vehicleDetail[invStock]</h2>";
     $detv .= '</div>';
     return $detv;
 }

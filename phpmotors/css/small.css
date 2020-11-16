@@ -327,6 +327,10 @@ form input.submitBtn {
     height: 5px
 }
 
+#inv-details img {
+    max-width: 100%;
+}
+
 footer {
     height: 100px;
     width: 100%;

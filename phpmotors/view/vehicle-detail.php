@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/medium.css" media="screen">
     <link rel="stylesheet" href="../css/large.css" media="screen">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-    <title>Vehicle Details | PHP Motors, Inc.</title>
+    <title><?php echo $vehicleName ?> | PHP Motors, Inc.</title>
 </head>
 <body id="background">
     <div id="content">
@@ -22,6 +22,7 @@
         <?php echo $navList; ?>
     </nav>
     <main>
+        <h1><?php echo $vehicleName; ?> vehicles</h1>
         <?php if(isset($message)){
             echo $message; }
         ?>
