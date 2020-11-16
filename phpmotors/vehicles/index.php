@@ -194,6 +194,16 @@
             }
         include '../view/classification.php';
         break;
+        case 'carDetails':
+            $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
+            $vehicleDetail = getVehicleById($invId);
+            if(!count($vehicleDetail)){
+                $message = "<p class='notice'>Sorry, no vehicle details could be found.</p>";
+            } else {
+                $vehicleDetail = buildVehicleDetails($vehicleDetail);
+            }
+        include '../view/vehicle-detail.php';
+        break;
         default:
             $classificationList = buildClassificationList($classifications);
             include '../view/vehicle-management.php';
