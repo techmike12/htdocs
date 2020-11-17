@@ -324,7 +324,7 @@ form input.submitBtn {
     margin-right: auto;
 }
 
-#inv-break {
+.inv-break {
     background-color: #3a3a3a;
     margin-left: 0px;
     height: 5px
