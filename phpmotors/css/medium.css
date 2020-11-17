@@ -74,6 +74,10 @@
         height: 150px;
     }
 
+    #inv-break {
+        display: none;
+    }
+
     #inv-display li{
         border: 1px #ccc solid;
 		max-width: 200px;
