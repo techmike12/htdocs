@@ -27,15 +27,15 @@ if (isset($_SESSION['message'])) {
     </nav>
     <main>
         <h1>Image Management</h1>
-        <p>Choose one of the options below:</p>
+        <p class="explain">Choose one of the options below:</p>
 
         <h2>Add New Vehicle Image</h2>
         <?php
             if (isset($message)) {
                 echo $message;
             } ?>
-        <form action="/phpmotors/uploads/" method="post" enctype="multipart/form-data">
-        <label for="invItem">Vehicle</label>
+        <form id="formImage" action="/phpmotors/uploads/" method="post" enctype="multipart/form-data">
+        <label for="invItem" id="vLabel">Vehicle:</label>
             <?php echo $prodSelect; ?>
             <fieldset>
                 <label>Is this the main image for the vehicle?</label>
@@ -46,12 +46,13 @@ if (isset($_SESSION['message'])) {
             </fieldset>
         <label>Upload Image:</label>
         <input type="file" name="file1">
-        <input type="submit" class="regbtn" value="Upload">
+        <input type="submit" value="Upload" class="submitBtn">
         <input type="hidden" name="action" value="upload">
+        </form>
     </main>
     <hr id="break">
     <h2>Existing Images</h2>
-    <p class="notice">If deleting an image, delete the thumbnail too and vice versa.</p>
+    <p class="explain">If deleting an image, delete the thumbnail too and vice versa.</p>
     <?php
         if (isset($imageDisplay)) {
             echo $imageDisplay;

@@ -343,6 +343,30 @@ form input.submitBtn {
     margin-left: 2%;
 }
 
+/*Image Upload*/
+#formImage {
+    background-repeat: no-repeat;
+    padding-left: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    font-weight: bold;
+}
+
+#formImage fieldset {
+    border: none;
+    padding-left: 0px;
+}
+
+#formImage input {
+    margin-top: 10px;
+}
+
+.notice {
+    padding: 5px;
+    color: red;
+    font-family: Righteous;
+}
+
 footer {
     height: 100px;
     width: 100%;
