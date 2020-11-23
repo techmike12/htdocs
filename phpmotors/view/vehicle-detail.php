@@ -22,7 +22,7 @@
         <?php echo $navList; ?>
     </nav>
     <main>
-        <h1><?php echo $vehicleName; ?> vehicles</h1>
+        <h1 id="detailH1"><?php echo $vehicleName; ?> vehicles</h1>
         <?php if(isset($message)){
             echo $message; }
         ?>

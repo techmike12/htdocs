@@ -388,6 +388,24 @@ form input.submitBtn {
     margin-right: auto;
 }
 
+#thumb {
+    float: left;
+    display: grid;
+}
+
+#thumb img {
+    max-width: 100px;
+    transition: transform .2s;
+}
+
+#thumb img:hover {
+    transform: scale(2);
+}
+
+#detailH1 {
+    text-align: center;
+}
+
 footer {
     height: 100px;
     width: 100%;

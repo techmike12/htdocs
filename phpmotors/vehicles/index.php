@@ -207,7 +207,7 @@
                 $vehicleDetail = buildVehicleDetails($vehicleDetail);
             }
             if (!count($tnImages)){
-                $tnImages = "";
+                $tnImages = count($tnImages);
             } else {
                 $tnImages = buildThumbNails($tnImages);
             }

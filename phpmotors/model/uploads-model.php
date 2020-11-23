@@ -66,7 +66,7 @@ function checkExistingImage($imgName) {
 // Obtain other thumbnail images if available
 function getThumbImages($invId) {
     $db = phpmotorsConnect();
-    $sql = "SELECT * FROM images WHERE invId = :invId AND imgName LIKE 't%n'";
+    $sql = "SELECT * FROM images WHERE invId = :invId AND imgName LIKE '%tn%'";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invId', $invId, PDO::PARAM_STR);
     $stmt->execute();
