@@ -114,7 +114,7 @@ function deleteVehicle($invId) {
 // Get list of vehicles by classification
 function getVehiclesByClassification($classificationName) {
     $db = phpmotorsConnect();
-    $sql = 'SELECT * FROM inventory WHERE classificationId IN (SELECT classificationId FROM carclassification WHERE classificationName = :classificationName)';
+    $sql = 'SELECT inventory.invId, invModel, invDescription, invPrice, invStock, invColor, imgId, imgPath, invMake, imgName, imgPrimary FROM inventory JOIN images ON inventory.invId = images.invId WHERE classificationId IN (SELECT classificationId FROM carclassification WHERE classificationName = :classificationName)';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':classificationName', $classificationName, PDO::PARAM_STR);
     $stmt->execute();
@@ -126,7 +126,7 @@ function getVehiclesByClassification($classificationName) {
 // Get vehicle details from invID
 function getVehicleById($invId) {
     $db = phpmotorsConnect();
-    $sql = 'SELECT * FROM inventory WHERE invId = :invId';
+    $sql = 'SELECT inventory.invId, invModel, invDescription, invPrice, invStock, invColor, imgId, imgPath, invMake, imgName, imgPrimary FROM inventory JOIN images ON inventory.invId = images.invId WHERE inventory.invId = :invId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
     $stmt->execute();

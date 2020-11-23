@@ -47,12 +47,14 @@ function buildClassificationList($classifications) {
 function buildVehiclesDisplay($vehicles) {
     $dv = '<ul id="inv-display">';
     foreach ($vehicles as $vehicle) {
-     $dv .= '<li>';
-     $dv .= "<img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
-     $dv .= "<h2><a href='/phpmotors/vehicles/?action=carDetails&invId=$vehicle[invId]'>$vehicle[invMake] $vehicle[invModel]</a></h2>";
-     $dv .= "<span>$$vehicle[invPrice]</span>";
-     $dv .= '<hr class="inv-break">';
-     $dv .= '</li>';
+        if (strrpos($vehicle["imgName"], '-tn')) {
+            $dv .= '<li>';
+            $dv .= "<img src='$vehicle[imgPath]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
+            $dv .= "<h2><a href='/phpmotors/vehicles/?action=carDetails&invId=$vehicle[invId]'>$vehicle[invMake] $vehicle[invModel]</a></h2>";
+            $dv .= "<span>$$vehicle[invPrice]</span>";
+            $dv .= '<hr class="inv-break">';
+            $dv .= '</li>';
+        }
     }
     $dv .= '</ul>';
     return $dv;
@@ -65,14 +67,16 @@ function buildVehicleDetails($vehicleDetail) {
     $price = $vehicleDetail['invPrice'];
     $price_format = number_format($price, 2, '.', ',');
     $detv = '<div id="inv-details">';
-    $detv .= "<img src='$vehicleDetail[invImage]' alt='Image of $vehicleDetail[invMake] $vehicleDetail[invModel] on phpmotors.com'>";
-    $detv .= "<h2>Price: $$price_format</h2>";
-    $detv .= '<hr class="inv-break">';
-    $detv .= "<h2>$vehicleDetail[invMake] $vehicleDetail[invModel] Details</h2>";
-    $detv .= "<p>$vehicleDetail[invDescription]</p>";
-    $detv .= "<h2>Color: $vehicleDetail[invColor]</h2>";
-    $detv .= "<h2># in Stock: $vehicleDetail[invStock]</h2>";
-    $detv .= '</div>';
+    if (strrpos($vehicleDetail["imgName"], '-tn') == 0) {
+        $detv .= "<img src='$vehicleDetail[imgPath]' alt='Image of $vehicleDetail[invMake] $vehicleDetail[invModel] on phpmotors.com'>";
+        $detv .= "<h2>Price: $$price_format</h2>";
+        $detv .= '<hr class="inv-break">';
+        $detv .= "<h2>$vehicleDetail[invMake] $vehicleDetail[invModel] Details</h2>";
+        $detv .= "<p>$vehicleDetail[invDescription]</p>";
+        $detv .= "<h2>Color: $vehicleDetail[invColor]</h2>";
+        $detv .= "<h2># in Stock: $vehicleDetail[invStock]</h2>";
+        $detv .= '</div>';
+    }
     return $detv;
 }
 
