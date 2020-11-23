@@ -80,6 +80,16 @@ function buildVehicleDetails($vehicleDetail) {
     return $detv;
 }
 
+// Thumbnails for vehicle details
+function buildThumbNails($tnimages) {
+    $tnv = '<div id="thumb">';
+    foreach ($tnimages as $tn) {
+        $tnv .= "<img src='$tn[imgPath]' alt='$tn[imgName]'>";
+    }
+    $tnv .= '</div>';
+    return $tnv;
+}
+
 /* * ********************************
 *  Functions for working with images
 * ********************************* */

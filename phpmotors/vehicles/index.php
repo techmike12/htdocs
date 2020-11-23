@@ -12,6 +12,8 @@
     require_once '../model/vehicles-model.php';
     # Get functions for email validation
     require_once '../library/functions.php';
+    # Get image upload functions
+    require_once '../model/uploads-model.php';
 
     # Get the array of classifications
     $classifications = getClassifications();
@@ -197,11 +199,17 @@
         case 'carDetails':
             $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
             $vehicleDetail = getVehicleById($invId);
+            $tnImages = getThumbImages($invId);
             $vehicleName = "$vehicleDetail[invMake] $vehicleDetail[invModel]";
             if(!count($vehicleDetail)){
                 $message = "<p class='notice'>Sorry, no vehicle details could be found.</p>";
             } else {
                 $vehicleDetail = buildVehicleDetails($vehicleDetail);
+            }
+            if (!count($tnImages)){
+                $message = "";
+            } else {
+                $tnImages = buildThumbNails($tnImages);
             }
         include '../view/vehicle-detail.php';
         break;

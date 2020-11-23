@@ -26,6 +26,9 @@
         <?php if(isset($message)){
             echo $message; }
         ?>
+        <?php if(isset($tnImages)){
+            echo $tnImages;
+        } ?>
         <?php if(isset($vehicleDetail)){
             echo $vehicleDetail;
         } ?>
