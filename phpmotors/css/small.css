@@ -388,16 +388,16 @@ form input.submitBtn {
     margin-right: auto;
 }
 
-#thumb {
+.thumb {
     max-width: 100%;
 }
 
-#thumb img {
+.thumb img {
     transition: transform .2s;
     margin: 10px;
 }
 
-#thumb img:hover {
+.thumb img:hover {
     transform: scale(2);
 }
 

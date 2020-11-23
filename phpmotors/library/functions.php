@@ -82,7 +82,7 @@ function buildVehicleDetails($vehicleDetail) {
 
 // Thumbnails for vehicle details
 function buildThumbNails($tnimages) {
-    $tnv = '<div id="thumb">';
+    $tnv = '<div class="thumb">';
     foreach ($tnimages as $tn) {
         $tnv .= "<img src='$tn[imgPath]' alt='$tn[imgName]'>";
     }
