@@ -88,4 +88,21 @@
 		flex-direction: column;
 		justify-content: space-between;
     }
+
+    #image-display {
+        flex-flow: row wrap;
+        justify-content: flex-start;
+    }
+
+    #image-display h2{
+		font-size: 1rem;
+    }
+
+    #image-display li{
+		flex: 1 0 auto;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+    }
 }
