@@ -28,7 +28,7 @@ function storeImages($imgPath, $invId, $imgName, $imgPrimary) {
     $rowsChanged = $stmt->rowCount();
     $stmt->closeCursor();
     return $rowsChanged;
-
+}
 // Get Image Information from images table
 function getImages() {
     $db = phpmotorsConnect();
@@ -62,5 +62,4 @@ function checkExistingImage($imgName) {
     $imageMatch = $stmt->fetch();
     $stmt->closeCursor();
     return $imageMatch;
-}
 }
