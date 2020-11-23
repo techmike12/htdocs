@@ -389,13 +389,12 @@ form input.submitBtn {
 }
 
 #thumb {
-    float: left;
-    display: grid;
+    max-width: 100%;
 }
 
 #thumb img {
-    max-width: 100px;
     transition: transform .2s;
+    margin: 10px;
 }
 
 #thumb img:hover {
@@ -404,6 +403,14 @@ form input.submitBtn {
 
 #detailH1 {
     text-align: center;
+}
+
+#imageDivBot {
+    display: block;
+}
+
+#imageDiv {
+    display: none;
 }
 
 footer {

@@ -22,16 +22,23 @@
         <?php echo $navList; ?>
     </nav>
     <main>
+        <div id="imageDiv">
+        <?php if(isset($tnImages)){
+            echo $tnImages;
+        } ?>
+        </div>
         <h1 id="detailH1"><?php echo $vehicleName; ?> vehicles</h1>
         <?php if(isset($message)){
             echo $message; }
         ?>
-        <?php if(isset($tnImages)){
-            echo $tnImages;
-        } ?>
         <?php if(isset($vehicleDetail)){
             echo $vehicleDetail;
         } ?>
+        <div id="imageDivBot">
+        <?php if(isset($tnImages)){
+            echo $tnImages;
+        } ?>
+        </div>
     </main>
     <hr id="break">
     <footer>

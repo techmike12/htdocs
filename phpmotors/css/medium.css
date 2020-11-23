@@ -109,4 +109,16 @@
 		flex-direction: column;
 		justify-content: space-between;
     }
+
+    #thumb {
+        max-width: 100%;
+    }
+
+    #imageDiv {
+        display: block;
+    }
+
+    #imageDivBot {
+        display: none;
+    }
 }
