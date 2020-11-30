@@ -11,8 +11,8 @@
     require_once '../model/vehicles-model.php';
     # Get functions for email validation
     require_once '../library/functions.php';
-    # Get image upload functions
-    require_once '../model/uploads-model.php';
+    # Get review functions
+    require_once '../model/reviews-model.php';
 
     # Get the array of classifications
     $classifications = getClassifications();
@@ -24,5 +24,25 @@
     $action = filter_input(INPUT_POST, 'action');
     if ($action == NULL){
         $action = filter_input(INPUT_GET, 'action');
+    }
+
+    switch ($action){
+        # Get Reviews for the view
+        case 'getReview':
+
+        include '../view/';
+        break;
+        # Delete Review
+        case 'deleteReview':
+
+        include '../view/';
+        break;
+        # Update Review
+        case 'updateReview':
+
+        include '../view/';
+        break;
+        default:
+            include '../view/';
     }
 ?>

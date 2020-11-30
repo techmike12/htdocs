@@ -244,4 +244,9 @@ function resizeImage($old_image_path, $new_image_path, $max_width, $max_height) 
         // Free any memory associated with the old image
         imagedestroy($old_image);
 }
+
+/* * ********************************
+*  Functions for reviews
+* ********************************* */
+
 ?>
