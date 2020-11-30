@@ -32,7 +32,7 @@
                 <input type="image" src="/phpmotors/images/site/own_today.png" alt="Own Today Button">
             </div>
             <div id="dmc">
-                <img id="delor" src="/phpmotors/images/vehicles/delorean.jpg" alt="DMC Delorean">
+                <img id="delor" src="/phpmotors/images/site/delorean.jpg" alt="DMC Delorean">
             </div>
         </section>
             <section id="uprev">

@@ -126,6 +126,10 @@
                 include '../view/login.php';
                 exit;
             }
+
+            # Delete cookie
+            setcookie('firstname', "", time(), - 3600);
+
             // A valid user exists, log them in
             $_SESSION['loggedin'] = TRUE;
 
