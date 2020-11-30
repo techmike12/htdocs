@@ -27,22 +27,17 @@
     }
 
     switch ($action){
-        # Get Reviews for the view
-        case 'getReview':
-
-        include '../view/';
-        break;
         # Delete Review
         case 'deleteReview':
 
-        include '../view/';
+        include '../view/reviews-delete.php';
         break;
         # Update Review
         case 'updateReview':
 
-        include '../view/';
+        include '../view/reviews-update.php';
         break;
         default:
-            include '../view/';
+            include '../view/admin.php';
     }
 ?>
