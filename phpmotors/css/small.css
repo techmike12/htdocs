@@ -413,6 +413,12 @@ form input.submitBtn {
     display: none;
 }
 
+/*Reviews*/
+#reviews {
+    display: block;
+    margin-top: 60px;
+}
+
 footer {
     height: 100px;
     width: 100%;

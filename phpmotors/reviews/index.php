@@ -27,17 +27,33 @@
     }
 
     switch ($action){
+        # Add new review
+        case 'addReview':
+
+        break;
+        # View for deleting
+        case 'delReview':
+
+        include '../view/reviews-delete.php';
+        break;
         # Delete Review
         case 'deleteReview':
 
-        include '../view/reviews-delete.php';
+        break;
+        # View for updating
+        case 'editReview':
+
+        include '../view/reviews-update.php';
         break;
         # Update Review
         case 'updateReview':
 
-        include '../view/reviews-update.php';
         break;
         default:
-            include '../view/admin.php';
+            if (!$_SESSION) {
+                include '../view/home.php';
+            } else {
+                include '../view/admin.php';
+            }
     }
 ?>

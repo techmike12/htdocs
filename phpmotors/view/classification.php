@@ -1,12 +1,3 @@
-<?php
-    // Check if logged in
-    if (!$_SESSION) {
-        header('Location:../index.php');
-    }
-    if (isset($_SESSION['message'])) {
-        $message = $_SESSION['message'];
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

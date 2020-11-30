@@ -41,6 +41,10 @@
         </div>
     </main>
     <hr id="break">
+    <div id="reviews">
+        <h2>Customer Reviews</h2>
+        <!--Review can be added when logged in-->
+    </div>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
     </footer>
