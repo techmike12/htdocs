@@ -1,5 +1,11 @@
 <?php
 # Reviews Model
-# get, update, and delete reviews
+# get reviews by invID
+
+# get reviews by clientId
+
+# update review
+
+# delete review
 
 ?>
