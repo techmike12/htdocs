@@ -250,6 +250,7 @@ function resizeImage($old_image_path, $new_image_path, $max_width, $max_height) 
 * ********************************* */
 /* Build reviews section with textbox and screen name (first initial and last name) if logged in
 *  if not logged in show reviews and message stating you need to log in and link to log in
+*  if no reviews display "Be the first to write a review"
 */
 
 /* Build reviews section for admin view
