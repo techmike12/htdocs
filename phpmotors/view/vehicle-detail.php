@@ -18,7 +18,6 @@
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
     </header>
     <nav class="navigation">
-        <?php #require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/navigation.php'; ?>
         <?php echo $navList; ?>
     </nav>
     <main>
@@ -42,14 +41,14 @@
     </main>
     <hr id="break">
     <div id="reviews">
-        <h2>Customer Reviews</h2>
+        <h1>Customer Reviews</h1>
         <?php
         if ($_SESSION) {
-            $clientFirst = substr($_SESSION['clientData']['clientFirstname'], 0, 0);
+            $clientFirst = substr($_SESSION['clientData']['clientFirstname'], 0, 1);
             $clientLast = $_SESSION['clientData']['clientLastname'];
-            $clientName = $clientFirst + $clientLast;
+            $clientName = $clientFirst.$clientLast;
             $clientId = $_SESSION['clientData']['clientId'];
-            echo "<h2>Review the $vehicleName</h2>";
+            echo "<h2 id='reviewV'>Review the $vehicleName</h2>";
             echo "<form id='forms' method='post' action='/phpmotors/reviews/'>";
             echo "<label for='screenName'>Screen Name:</label>";
             echo "<input type='text' id='screenName' value=$clientName readonly='readonly'>";

@@ -247,7 +247,7 @@ h2 {
     margin-left: 2%;
 }
 
-#forms, #infoform, #passform {
+#forms, #infoform, #passform, #reviews {
     background-repeat: no-repeat;
     padding-left: 15px;
     display: grid;
@@ -414,9 +414,17 @@ form input.submitBtn {
 }
 
 /*Reviews*/
-#reviews {
-    display: block;
-    margin-top: 60px;
+#reviewV {
+    padding-top: 3%;
+}
+
+#reviews form label{
+    font-weight: bold;
+}
+
+#reviews form textarea {
+    margin-bottom: 2%;
+    padding-bottom: 2%;
 }
 
 #reviewLog {

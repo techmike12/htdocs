@@ -47,11 +47,13 @@ function buildClassificationList($classifications) {
 function buildVehiclesDisplay($vehicles) {
     $dv = '<ul id="inv-display">';
     foreach ($vehicles as $vehicle) {
+        $price = $vehicle['invPrice'];
+        $price_format = number_format($price, 2, '.', ',');
         if (strrpos($vehicle["imgName"], '-tn') and ($vehicle["imgPrimary"] == 1) ) {
             $dv .= '<li>';
             $dv .= "<img src='$vehicle[imgPath]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
             $dv .= "<h2><a href='/phpmotors/vehicles/?action=carDetails&invId=$vehicle[invId]'>$vehicle[invMake] $vehicle[invModel]</a></h2>";
-            $dv .= "<span>$$vehicle[invPrice]</span>";
+            $dv .= "<span>$$price_format</span>";
             $dv .= '<hr class="inv-break">';
             $dv .= '</li>';
         }
