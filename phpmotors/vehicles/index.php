@@ -14,6 +14,8 @@
     require_once '../library/functions.php';
     # Get image upload functions
     require_once '../model/uploads-model.php';
+    # Get review functions
+    require_once '../model/reviews-model.php';
 
     # Get the array of classifications
     $classifications = getClassifications();

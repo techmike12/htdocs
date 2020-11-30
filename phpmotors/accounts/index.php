@@ -12,6 +12,8 @@
     require_once '../model/accounts-model.php';
     # Get the email validation
     require_once '../library/functions.php';
+    # Get review functions
+    require_once '../model/reviews-model.php';
 
     # Get the array of classifications
     $classifications = getClassifications();
