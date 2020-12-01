@@ -203,6 +203,7 @@
             $vehicleDetail = getVehicleById($invId);
             $tnImages = getThumbImages($invId);
             $vehicleName = "$vehicleDetail[invMake] $vehicleDetail[invModel]";
+            $vehicleReview = getVehicleReviewById($invId);
             if(!count($vehicleDetail)){
                 $message = "<p class='notice'>Sorry, no vehicle details could be found.</p>";
             } else {
@@ -212,6 +213,11 @@
                 $tnImages = count($tnImages);
             } else {
                 $tnImages = buildThumbNails($tnImages);
+            }
+            if (!count($vehicleReview)){
+                $message = "<p>Be the first to write a review</p>";
+            } else {
+                $vehicleReview = buildVehicleReviews($vehicleReview);
             }
         include '../view/vehicle-detail.php';
         break;

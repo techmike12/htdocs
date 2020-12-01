@@ -250,10 +250,22 @@ function resizeImage($old_image_path, $new_image_path, $max_width, $max_height) 
 /* * ********************************
 *  Functions for reviews
 * ********************************* */
-/* Build reviews section with textbox and screen name (first initial and last name) if logged in
-*  if not logged in show reviews and message stating you need to log in and link to log in
-*  if no reviews display "Be the first to write a review"
-*/
+// Build reviews section
+function buildVehicleReviews($vehicleReview){
+    if(!$_SESSION){
+        
+    }
+    $rev = '<div id="image-display">';
+    foreach ($vehicleReview as $review) {
+    $clientFirst = substr($review['clients']['clientFirstname'], 0, 1);
+    $clientLast = $review['clients']['clientLastname'];
+    $clientName = $clientFirst.$clientLast;
+    $rev .= "<p id='screenName>$clientName";
+    $rev .= "<p id='reviewComment'>$review[revText]</p>";
+   }
+    $rev .= '</div>';
+    return $rev;
+}
 
 /* Build reviews section for admin view
 *  Show update and delete buttons

@@ -49,19 +49,23 @@
             $clientName = $clientFirst.$clientLast;
             $clientId = $_SESSION['clientData']['clientId'];
             echo "<h2 id='reviewV'>Review the $vehicleName</h2>";
-            echo "<form id='forms' method='post' action='/phpmotors/reviews/'>";
+            echo "<form id='forms' method='post' action='/phpmotors/reviews/index.php'>";
             echo "<label for='screenName'>Screen Name:</label>";
             echo "<input type='text' id='screenName' value=$clientName readonly='readonly'>";
             echo "<label for='reviewText'>Review:</label>";
-            echo "<textarea for='comment' form='forms'>Enter review here....</textarea>";
+            echo "<textarea for='comment' form='forms' name='revText'>Enter review here....</textarea>";
             echo "<input type='submit' name='submit' id='review-submit' value='Add Review' class='submitBtn'>";
-            echo "<input type=hidden name=action value=addReview>";
-            echo "<input type=hidden name=clientId value=$clientId>";
-            echo "<input type=hidden name=invId value=$invId>";
-            # Display reviews (use function)
+            echo "<input type=hidden name='action' value=addReview>";
+            echo "<input type=hidden name='clientId' value=$clientId>";
+            echo "<input type=hidden name='invId' value=$invId>";
+            if(isset($vehicleReview)){
+                echo $vehicleReview;
+            }
         } else {
             echo "<p id='reviewLog'>You must <a href='../../phpmotors/accounts/index.php?action=login'>login</a> to write a review</p>";
-            # Display reviews (use function)
+            if(isset($vehicleReview)){
+                echo $vehicleReview;
+            }
         }?>
     </form>
     </div>
