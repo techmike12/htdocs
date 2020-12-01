@@ -75,7 +75,7 @@
             $_SESSION['message'] = $message;
 
             // Redirect to this controller for default action
-            header('location: .');
+            header('location: ../accounts/');
         break;
         # View for updating
         case 'editReview':
