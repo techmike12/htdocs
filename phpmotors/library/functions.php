@@ -292,20 +292,22 @@ function buildClientReviews($clientReviews) {
 */
 
 function buildDelReviews($reviewText) {
-    $vehicleName = $reviewText['invModel'].' '.$reviewText['invModel'];
-    $date = $reviewText['revDate'];
+foreach ($reviewText as $text) {
+    $vehicleName = $text['invMake'].' '.$text['invModel'];
+    $date = $text['revDate'];
     $date = date('j F, Y');
     strtotime($date);
-    $revId = $reviewText['revId'];
-    $text = $reviewText['revText'];
-
+    $revId = $text['revId'];
+    $text = $text['revText'];
     $rev = "<h1>$vehicleName Review</h1>";
+    $rev .= "<p class='notice'>Deletes cannot be undone. Are you sure you want to delete this?</p>";
     $rev .= "<p class='explain'>Reviewed on $date</p>";
     $rev .= "<form id='forms' method='post' action='/phpmotors/reviews/index.php'>";
-    $rev .= "<textarea for='comment' form='forms' name='revText'>$text</textarea>";
+    $rev .= "<textarea for='comment' form='forms' name='revText' id='deleteText' readonly='readonly'>$text</textarea>";
     $rev .= "<input type='submit' name='submit' id='review-submit' value='Delete' class='submitBtn'>";
     $rev .= "<input type=hidden name='action' value=deleteReview>";
     $rev .= "<input type=hidden name='revId' value=$revId>";
+}
     $rev .= "</form>";
     return $rev;
 }

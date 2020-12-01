@@ -117,4 +117,8 @@
     #imageDivBot {
         display: none;
     }
+
+    #deleteText {
+        max-width: 50%;
+    }
 }

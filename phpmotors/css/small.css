@@ -461,6 +461,12 @@ form input.submitBtn {
     margin-left: 2%;
 }
 
+#deleteText {
+    margin-bottom: 5px;
+    background-color: yellow;
+    max-width: 75%;
+}
+
 footer {
     height: 100px;
     width: 100%;

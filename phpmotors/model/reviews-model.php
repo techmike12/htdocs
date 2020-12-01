@@ -36,9 +36,9 @@ function getClientReviewsById($clientId){
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
     $stmt->execute();
-    $vehicleReview = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $clientReview = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
-    return $vehicleReview;
+    return $clientReview;
 }
 
 # get review by revId
@@ -54,8 +54,18 @@ function getReviewById($revId) {
     return $reviewById;
 }
 
-# update review
-
 # delete review
+function deleteReview($revId) {
+    $db = phpmotorsConnect();
+    $sql = 'DELETE FROM reviews WHERE revId = :revId';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':revId', $revId, PDO::PARAM_INT);
+    $stmt->execute();
+    $result = $stmt->rowCount();
+    $stmt->closeCursor();
+    return $result;
+}
+
+# update review
 
 ?>

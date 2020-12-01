@@ -45,16 +45,16 @@
             }
 
             // Redirect to this controller for default action
-            header('location: .');
+            header("location: ../vehicles/index.php?action=carDetails&invId=$invId");
         break;
         # View for deleting
         case 'delReview':
-            $revId = filter_input(INPUT_POST, 'revId', FILTER_SANITIZE_NUMBER_INT);
+            $revId = filter_input(INPUT_GET, 'revId', FILTER_SANITIZE_NUMBER_INT);
             // Send data to the model
             $reviewText = getReviewById($revId);
             // Set a message based on the get result
             if (!count($reviewText)) {
-                $reviewText = "<p class='notice'>No Review Selected</p>";
+                $reviewText = "<p class='notice'>RevId = $revId</p>";
             } else {
                 $reviewText = buildDelReviews($reviewText);
             }
@@ -62,7 +62,20 @@
         break;
         # Delete Review
         case 'deleteReview':
+            $revId = filter_input(INPUT_POST, 'revId', FILTER_SANITIZE_NUMBER_INT);
+            // Send data to the model
+            $remove = deleteReview($revId);
+            // Set a message based on the get result
+            if ($remove) {
+                $message = "<p class='notice'>Review was successfully deleted.</p>";
+            } else {
+                $message = "<p class='notice'>Review was NOT deleted.</p>";
+            }
+            // Store message to session
+            $_SESSION['message'] = $message;
 
+            // Redirect to this controller for default action
+            header('location: .');
         break;
         # View for updating
         case 'editReview':
