@@ -429,6 +429,36 @@ form input.submitBtn {
 
 #reviewLog {
     margin-left: 2%;
+    font-size: 1.2m;
+}
+
+#review-display {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    list-style: none;
+    background-color: #4c96d7;
+    border-radius: 12px;
+    width: 75%;
+    padding: .75rem 1.5rem;
+    margin-left: 5px;
+}
+
+.reviewComment {
+    background-color:white;
+    width: 75%;
+    padding: 2px;
+    border-radius: 12px;
+}
+
+.screenName {
+    font-family: Righteous;
+    margin-top: 5px;
+}
+
+#reviewFirst {
+    margin-top: 15px;
+    margin-left: 2%;
 }
 
 footer {

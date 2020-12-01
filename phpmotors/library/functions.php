@@ -252,15 +252,20 @@ function resizeImage($old_image_path, $new_image_path, $max_width, $max_height) 
 * ********************************* */
 // Build reviews section
 function buildVehicleReviews($vehicleReview){
-    $rev = '<div id="image-display">';
+    date_default_timezone_set('America/Boise');
+    arsort($vehicleReview);
+    $rev = '<ul id="review-display">';
     foreach ($vehicleReview as $review) {
-    $clientFirst = substr($review['clients']['clientFirstname'], 0, 1);
-    $clientLast = $review['clients']['clientLastname'];
+    $clientFirst = substr($review['clientFirstname'], 0, 1);
+    $clientLast = $review['clientLastname'];
     $clientName = $clientFirst.$clientLast;
-    $rev .= "<p id='screenName>$clientName";
-    $rev .= "<p id='reviewComment'>$review[revText]</p>";
+    $date = $review['revDate'];
+    $date = date('j F, Y');
+    strtotime($date);
+    $rev .= "<li class='screenName'>$clientName wrote on $date:</li>";
+    $rev .= "<li class='reviewComment'>$review[revText]</li>";
    }
-    $rev .= '</div>';
+    $rev .= '</ul>';
     return $rev;
 }
 

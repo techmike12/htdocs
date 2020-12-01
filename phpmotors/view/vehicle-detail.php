@@ -58,6 +58,7 @@
             echo "<input type=hidden name='action' value=addReview>";
             echo "<input type=hidden name='clientId' value=$clientId>";
             echo "<input type=hidden name='invId' value=$invId>";
+            echo "</form>";
             if(isset($vehicleReview)){
                 echo $vehicleReview;
             }

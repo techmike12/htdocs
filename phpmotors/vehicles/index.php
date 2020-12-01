@@ -215,7 +215,7 @@
                 $tnImages = buildThumbNails($tnImages);
             }
             if (!count($vehicleReview)){
-                $message = "<p>Be the first to write a review</p>";
+                $vehicleReview = "<p id='reviewFirst'>Be the first to write a review</p>";
             } else {
                 $vehicleReview = buildVehicleReviews($vehicleReview);
             }

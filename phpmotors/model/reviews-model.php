@@ -19,14 +19,12 @@ function addReview($invId, $clientId, $revText){
 # get reviews by invId
 function getVehicleReviewById($invId){
     $db = phpmotorsConnect();
-    $sql = 'SELECT revId, inventory.invId, client.clientId, revText, revDate
-    FROM reviews 
-    INNER JOIN inventory ON reviews.invId = inventory.invId WHERE reviews.invId = :invId
-    INNER JOIN clients ON reviews.clientId = clients.clientId';
+    $sql = 'SELECT revId, revText, revDate, clients.clientId, clients.clientFirstname, clients.clientLastname
+    FROM reviews JOIN clients ON reviews.clientId = clients.clientId WHERE reviews.invId = :invId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
     $stmt->execute();
-    $vehicleReview = $stmt->fetch(PDO::FETCH_ASSOC);
+    $vehicleReview = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
     return $vehicleReview;
 }
