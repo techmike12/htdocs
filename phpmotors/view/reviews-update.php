@@ -31,7 +31,16 @@
         <?php echo $navList; ?>
     </nav>
     <main>
-        <h1>Reviews Update</h1>
+        <?php
+        if (isset($message)) {
+            echo $message;
+        }
+        ?>
+        <?php
+        if (isset($reviewInfo)) {
+            echo $reviewInfo;
+        }
+        ?>
     </main>
     <hr id="break">
     <footer>

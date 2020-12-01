@@ -67,5 +67,16 @@ function deleteReview($revId) {
 }
 
 # update review
+function updateReview($revText, $revId) {
+    $db = phpmotorsConnect();
+    $sql = 'UPDATE reviews SET revText = :revText WHERE revId = :revId';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':revText', $revText, PDO::PARAM_STR);
+    $stmt->bindValue(':revId', $revId, PDO::PARAM_INT);
+    $stmt->execute();
+    $rowsChanged = $stmt->rowCount();
+    $stmt->closeCursor();
+    return $rowsChanged;
+}
 
 ?>

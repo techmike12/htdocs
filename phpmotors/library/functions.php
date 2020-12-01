@@ -281,7 +281,7 @@ function buildClientReviews($clientReviews) {
         $date = $review['revDate'];
         $date = date('j F, Y');
         strtotime($date);
-        $rev .= "<li class='inventoryName'>$vehicleName (Reviewed on $date): <a href='../../phpmotors/accounts/index.php?action=editReview&revId=$revId'>Edit</a> | <a href='../../phpmotors/reviews/index.php?action=delReview&revId=$revId'>Delete</a></li>";
+        $rev .= "<li class='inventoryName'>$vehicleName (Reviewed on $date): <a href='../../phpmotors/reviews/index.php?action=editReview&revId=$revId'>Edit</a> | <a href='../../phpmotors/reviews/index.php?action=delReview&revId=$revId'>Delete</a></li>";
    }
     $rev .= '</ul>';
     return $rev;
@@ -290,7 +290,6 @@ function buildClientReviews($clientReviews) {
 /*
 *  Build reviews section for delete view
 */
-
 function buildDelReviews($reviewText) {
 foreach ($reviewText as $text) {
     $vehicleName = $text['invMake'].' '.$text['invModel'];
@@ -302,6 +301,7 @@ foreach ($reviewText as $text) {
     $rev = "<h1>$vehicleName Review</h1>";
     $rev .= "<p class='notice'>Deletes cannot be undone. Are you sure you want to delete this?</p>";
     $rev .= "<p class='explain'>Reviewed on $date</p>";
+    $rev .= "<h2 class='explain'>Review Text:</h2>";
     $rev .= "<form id='forms' method='post' action='/phpmotors/reviews/index.php'>";
     $rev .= "<textarea for='comment' form='forms' name='revText' id='deleteText' readonly='readonly'>$text</textarea>";
     $rev .= "<input type='submit' name='submit' id='review-submit' value='Delete' class='submitBtn'>";
@@ -310,5 +310,41 @@ foreach ($reviewText as $text) {
 }
     $rev .= "</form>";
     return $rev;
+}
+
+/*
+*  Build reviews section for delete view
+*/
+function buildEditReviews($reviewInfo) {
+    foreach ($reviewInfo as $text) {
+        $vehicleName = $text['invMake'].' '.$text['invModel'];
+        $date = $text['revDate'];
+        $date = date('j F, Y');
+        strtotime($date);
+        $revId = $text['revId'];
+        $text = $text['revText'];
+        $rev = "<h1>$vehicleName Review</h1>";
+        $rev .= "<p class='explain'>Reviewed on $date</p>";
+        $rev .= "<h2 class='explain'>Review Text:</h2>";
+        $rev .= "<form id='forms' method='post' action='/phpmotors/reviews/index.php'>";
+        $rev .= "<textarea for='comment' form='forms' name='revText' id='editText'>$text</textarea>";
+        $rev .= "<input type='submit' name='submit' id='review-submit' value='Update' class='submitBtn'>";
+        $rev .= "<input type=hidden name='action' value=updateReview>";
+        $rev .= "<input type=hidden name='revId' value=$revId>";
+    }
+        $rev .= "</form>";
+        return $rev;
+}
+
+/*
+*  Check text for matching
+*/
+function checkText($revText, $revId) {
+    $reviewText = getReviewById($revId);
+    $oldText = '';
+    foreach ($reviewText as $revText) {
+        $oldText = $revText['revText'];
+    }
+    return preg_match($revText, $oldText);
 }
 ?>

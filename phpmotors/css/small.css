@@ -464,7 +464,12 @@ form input.submitBtn {
 #deleteText {
     margin-bottom: 5px;
     background-color: yellow;
-    max-width: 75%;
+    width: 85%;
+}
+
+#editText {
+    margin-bottom: 5px;
+    width: 85%;
 }
 
 footer {

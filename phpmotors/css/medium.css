@@ -119,6 +119,10 @@
     }
 
     #deleteText {
-        max-width: 50%;
+        width: 50%;
+    }
+
+    #editText {
+        width: 50%;
     }
 }
