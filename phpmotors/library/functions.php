@@ -252,9 +252,6 @@ function resizeImage($old_image_path, $new_image_path, $max_width, $max_height) 
 * ********************************* */
 // Build reviews section
 function buildVehicleReviews($vehicleReview){
-    if(!$_SESSION){
-        
-    }
     $rev = '<div id="image-display">';
     foreach ($vehicleReview as $review) {
     $clientFirst = substr($review['clients']['clientFirstname'], 0, 1);
