@@ -143,6 +143,16 @@
             // Store the array into the session
             $_SESSION['clientData'] = $clientData;
 
+            // Get review info by clientId
+            $clientId = $_SESSION['clientData']['clientId'];
+            $clientReviews = getClientReviewsById($clientId);
+
+            if (!count($clientReviews)) {
+                $clientReviews = "<p id='reviewFirst'>Be the first to write a review</p>";
+            } else {
+                $clientReviews = buildClientReviews($clientReviews);
+            }
+
             // Send them to the admin view
             include '../view/admin.php';
         break;
@@ -271,7 +281,16 @@
             break;
         // Default case
         default:
-        //Send to admin.php
+            // Get review info by clientId
+            $clientId = $_SESSION['clientData']['clientId'];
+            $clientReviews = getClientReviewsById($clientId);
+
+            if (!count($clientReviews)) {
+                $clientReviews = "<p id='reviewFirst'>Be the first to write a review</p>";
+            } else {
+                $clientReviews = buildClientReviews($clientReviews);
+            }
+            //Send to admin.php
             include '../view/admin.php';
         break;
         }

@@ -252,7 +252,6 @@ function resizeImage($old_image_path, $new_image_path, $max_width, $max_height) 
 * ********************************* */
 // Build reviews section
 function buildVehicleReviews($vehicleReview){
-    date_default_timezone_set('America/Boise');
     arsort($vehicleReview);
     $rev = '<ul id="review-display">';
     foreach ($vehicleReview as $review) {
@@ -272,4 +271,42 @@ function buildVehicleReviews($vehicleReview){
 /* Build reviews section for admin view
 *  Show update and delete buttons
 */
+function buildClientReviews($clientReviews) {
+    arsort($clientReviews);
+    $rev = "<p class='explain'>Use these link(s) to update or delete reviews.</p>";
+    $rev .= '<ul id="review-admin-display">';
+    foreach ($clientReviews as $review) {
+        $revId = $review['revId'];
+        $vehicleName = $review['invModel'].' '.$review['invModel'];
+        $date = $review['revDate'];
+        $date = date('j F, Y');
+        strtotime($date);
+        $rev .= "<li class='inventoryName'>$vehicleName (Reviewed on $date): <a href='../../phpmotors/accounts/index.php?action=editReview&revId=$revId'>Edit</a> | <a href='../../phpmotors/reviews/index.php?action=delReview&revId=$revId'>Delete</a></li>";
+   }
+    $rev .= '</ul>';
+    return $rev;
+}
+
+/*
+*  Build reviews section for delete view
+*/
+
+function buildDelReviews($reviewText) {
+    $vehicleName = $reviewText['invModel'].' '.$reviewText['invModel'];
+    $date = $reviewText['revDate'];
+    $date = date('j F, Y');
+    strtotime($date);
+    $revId = $reviewText['revId'];
+    $text = $reviewText['revText'];
+
+    $rev = "<h1>$vehicleName Review</h1>";
+    $rev .= "<p class='explain'>Reviewed on $date</p>";
+    $rev .= "<form id='forms' method='post' action='/phpmotors/reviews/index.php'>";
+    $rev .= "<textarea for='comment' form='forms' name='revText'>$text</textarea>";
+    $rev .= "<input type='submit' name='submit' id='review-submit' value='Delete' class='submitBtn'>";
+    $rev .= "<input type=hidden name='action' value=deleteReview>";
+    $rev .= "<input type=hidden name='revId' value=$revId>";
+    $rev .= "</form>";
+    return $rev;
+}
 ?>

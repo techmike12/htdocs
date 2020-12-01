@@ -31,7 +31,11 @@
         <?php echo $navList; ?>
     </nav>
     <main>
-        <h1>Reviews Delete</h1>
+    <?php
+        if (isset($reviewText)) {
+            echo $reviewText;
+        }
+    ?>
     </main>
     <hr id="break">
     <footer>

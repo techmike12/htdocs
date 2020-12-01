@@ -29,8 +29,30 @@ function getVehicleReviewById($invId){
     return $vehicleReview;
 }
 # get reviews by clientId
+function getClientReviewsById($clientId){
+    $db = phpmotorsConnect();
+    $sql = 'SELECT revId, revText, revDate, inventory.invId, inventory.invMake, inventory.invModel
+    FROM reviews JOIN inventory ON reviews.invId = inventory.invId WHERE reviews.clientId = :clientId';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
+    $stmt->execute();
+    $vehicleReview = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $vehicleReview;
+}
 
 # get review by revId
+function getReviewById($revId) {
+    $db = phpmotorsConnect();
+    $sql = 'SELECT revId, revText, revDate, inventory.invId, inventory.invMake, inventory.invModel
+    FROM reviews JOIN inventory ON reviews.invId = inventory.invId WHERE reviews.revId = :revId';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':revId', $revId, PDO::PARAM_INT);
+    $stmt->execute();
+    $reviewById = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $reviewById;
+}
 
 # update review
 

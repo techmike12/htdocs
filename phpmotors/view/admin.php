@@ -58,7 +58,13 @@
         echo "<p class='explain'>Use this link to update account information.</p>";
         echo "<a class='management' href='../accounts/index.php?action=clientUpdate&id=$clientId'>Update Account Information</a>";
         ?>
-        <!--Review section-->
+        <!-- Reviews Section -->
+        <?php
+        if ($clientLevel > 1 && isset($clientReviews)) {
+            echo "<h2>Manage Your Product Reviews</h2>";
+            echo $clientReviews;
+        }
+        ?>
     </main>
     <hr id="break">
     <footer>

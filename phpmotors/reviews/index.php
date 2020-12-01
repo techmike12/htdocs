@@ -30,8 +30,8 @@
         # Add new review
         case 'addReview':
             // Filter and store the data
-            $invId = filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_STRING);
-            $clientId = filter_input(INPUT_POST, 'clientId', FILTER_SANITIZE_STRING);
+            $invId = filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT);
+            $clientId = filter_input(INPUT_POST, 'clientId', FILTER_SANITIZE_NUMBER_INT);
             $revText = filter_input(INPUT_POST, 'revText', FILTER_SANITIZE_STRING);
             echo $invId;
             // Send data to the model
@@ -49,7 +49,15 @@
         break;
         # View for deleting
         case 'delReview':
-
+            $revId = filter_input(INPUT_POST, 'revId', FILTER_SANITIZE_NUMBER_INT);
+            // Send data to the model
+            $reviewText = getReviewById($revId);
+            // Set a message based on the get result
+            if (!count($reviewText)) {
+                $reviewText = "<p class='notice'>No Review Selected</p>";
+            } else {
+                $reviewText = buildDelReviews($reviewText);
+            }
         include '../view/reviews-delete.php';
         break;
         # Delete Review
