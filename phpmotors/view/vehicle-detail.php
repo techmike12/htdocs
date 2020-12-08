@@ -1,3 +1,12 @@
+<?php
+    // Check if logged in
+    if (!$_SESSION) {
+        header('Location:../index.php');
+    }
+    if (isset($_SESSION['message'])) {
+        $message = $_SESSION['message'];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,9 +36,6 @@
         } ?>
         </div>
         <h1 id="detailH1"><?php echo $vehicleName; ?> vehicles</h1>
-        <?php if(isset($message)){
-            echo $message; }
-        ?>
         <?php if(isset($vehicleDetail)){
             echo $vehicleDetail;
         } ?>
@@ -52,8 +58,10 @@
             echo "<form id='forms' method='post' action='/phpmotors/reviews/index.php'>";
             echo "<label for='screenName'>Screen Name:</label>";
             echo "<input type='text' id='screenName' value=$clientName readonly='readonly'>";
+            if(isset($message)){
+                echo $message; }
             echo "<label for='reviewText'>Review:</label>";
-            echo "<textarea for='comment' form='forms' name='revText'>Enter review here....</textarea>";
+            echo "<textarea for='comment' form='forms' name='revText' placeholder='Enter review here....'></textarea>";
             echo "<input type='submit' name='submit' id='review-submit' value='Add Review' class='submitBtn'>";
             echo "<input type=hidden name='action' value=addReview>";
             echo "<input type=hidden name='clientId' value=$clientId>";
@@ -78,3 +86,4 @@
     </script>
 </body>
 </html>
+<?php unset($_SESSION['message']); ?>

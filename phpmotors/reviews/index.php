@@ -34,6 +34,14 @@
             $clientId = filter_input(INPUT_POST, 'clientId', FILTER_SANITIZE_NUMBER_INT);
             $revText = filter_input(INPUT_POST, 'revText', FILTER_SANITIZE_STRING);
             echo $invId;
+
+            // Check for empty review
+            if (empty($revText)) {
+                $_SESSION['message'] = '<p class="center">Please provide a review.</p>';
+                header("location: ../vehicles/index.php?action=carDetails&invId=$invId");
+                exit;
+            }
+
             // Send data to the model
             $review = addReview($invId, $clientId, $revText);
 
