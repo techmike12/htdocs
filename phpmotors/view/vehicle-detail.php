@@ -60,8 +60,8 @@
             echo "<input type='text' id='screenName' value=$clientName readonly='readonly'>";
             if(isset($message)){
                 echo $message; }
-            echo "<label for='reviewText'>Review:</label>";
-            echo "<textarea for='comment' form='forms' name='revText' placeholder='Enter review here....' required></textarea>";
+            echo "<label id='reviewText'>Review:</label>";
+            echo "<textarea form='forms' name='revText' placeholder='Enter review here....' required></textarea>";
             echo "<input type='submit' name='submit' id='review-submit' value='Add Review' class='submitBtn'>";
             echo "<input type=hidden name='action' value=addReview>";
             echo "<input type=hidden name='clientId' value=$clientId>";
@@ -76,7 +76,6 @@
                 echo $vehicleReview;
             }
         }?>
-    </form>
     </div>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>

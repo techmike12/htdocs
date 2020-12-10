@@ -56,7 +56,7 @@ header {
 }
 
 p {
-    margin: 0;
+    margin: 2px;
     font-size: 1em;
     color: #002D52;
 }
@@ -425,11 +425,13 @@ form input.submitBtn {
 #reviews form textarea {
     margin-bottom: 2%;
     padding-bottom: 2%;
+    max-width: 100%;
+    margin-right: 10px;
 }
 
 #reviewLog {
     margin-left: 2%;
-    font-size: 1.2m;
+    font-size: 1.2em;
 }
 
 #review-display {
