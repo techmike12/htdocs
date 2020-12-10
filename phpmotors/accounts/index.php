@@ -130,7 +130,10 @@
             }
 
             # Delete cookie
-            setcookie('firstname', "", time(), - 3600);
+            if(isset($_COOKIE['firstname'])){
+                unset($_COOKIE['firstname']);
+                setcookie('firstname', null, -1, '/');
+            }
 
             // A valid user exists, log them in
             $_SESSION['loggedin'] = TRUE;

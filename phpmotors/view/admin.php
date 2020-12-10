@@ -60,7 +60,7 @@
         ?>
         <!-- Reviews Section -->
         <?php
-        if ($clientLevel > 1 && isset($clientReviews)) {
+        if (isset($clientReviews)) {
             echo "<h2>Manage Your Product Reviews</h2>";
             echo $clientReviews;
         }
